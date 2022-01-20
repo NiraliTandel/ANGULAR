@@ -1,0 +1,7 @@
+<h1>{{ title }}</h1>
+<h3>Name: {{ name }}</h3>
+<img [src]="itemImageUrl" style="height: 150px; width: 150px;"><br>
+<button (click)="onClick()">Submit</button><br>
+<input type="text" [(ngModel)]="data"><br>
+<h3>{{ data }}</h3>
+<app-parent></app-parent>
