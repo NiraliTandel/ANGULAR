@@ -21,7 +21,7 @@ export class AppComponent implements OnInit{
 
   listData = [{
     id: 1,
-    name: "Nirali Tandel",
+    name: "nirali Tandel",
     email: "nirali@gmail.com",
     salary: 8000,
     currencycode: "INR"
