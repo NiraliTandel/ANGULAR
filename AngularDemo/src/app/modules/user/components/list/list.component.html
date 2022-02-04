@@ -1,0 +1,31 @@
+<h2>
+  <input type="text" placeholder="Search..." name="search" />
+  <button routerLink="add">ADD</button>
+</h2>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">No.</th>
+      <th scope="col">Name</th>
+      <th scope="col">EmailAddress</th>
+      <th scope="col">Gender</th>
+      <th scope="col">DateOfEmployeement</th>
+      <th scope="col">Department</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of userData; let i=index">
+      <th scope="row">{{i+1}}.</th>
+      <td>{{user.firstname}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.gender}}</td>
+      <td>{{user.date}}</td>
+      <td>{{user.department}}</td>
+      <td>
+        <a routerLink="edit/{{user.id}}">Edit</a>
+        <button (click)="deleteUser(user.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,46 @@
+{
+  "department": [
+    {
+      "id": 1,
+      "name": "Frontend"
+    },
+    {
+      "id": 2,
+      "name": "QA"
+    },
+    {
+      "id": 3,
+      "name": "Database"
+    },
+    {
+      "id": 4,
+      "name": "Mobile"
+    },
+    {
+      "id": 5,
+      "name": ".NET"
+    }
+  ],
+  "forms": [
+    {
+      "firstname": "Nirali",
+      "lastname": "Tandel",
+      "email": "niralitandel8909@gmail.com",
+      "phone": "+918511007563",
+      "date": "2022-02-15",
+      "gender": "Female",
+      "department": "Frontend",
+      "id": 1
+    },
+    {
+      "firstname": "Ayushi",
+      "lastname": "Parmar",
+      "email": "aayu@gmail.com",
+      "phone": "9624595320",
+      "date": "2022-02-11",
+      "gender": "Female",
+      "department": "Mobile",
+      "id": 2
+    }
+  ]
+}

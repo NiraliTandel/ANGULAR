@@ -1,0 +1,159 @@
+<form [formGroup]="myForm" (ngSubmit)="OnSubmit()">
+  <div class="container">
+    <pre></pre>
+    <div>
+      <label for="firstname">First Name:</label>
+      <input
+        type="text"
+        id="firstname"
+        name="firstname"
+        formControlName="firstname"
+        placeholder="Enter First Name"
+      />
+      <div class="test"
+        *ngIf="getvalue['firstname'].touched && getvalue['firstname'].invalid"
+      >
+        <div
+          *ngIf="
+            getvalue['firstname'].errors &&
+            getvalue['firstname'].errors['required']
+          "
+        >
+          *First Name is required
+        </div>
+        <div
+          *ngIf="
+            getvalue['firstname'].errors &&
+            getvalue['firstname'].errors['minlength']
+          "
+        >
+          Minimum length should be 4
+        </div>
+        <div
+          *ngIf="
+            getvalue['firstname'].errors &&
+            getvalue['firstname'].errors['maxlength']
+          "
+        >
+          Maximum length should be 7
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="lastname">Last Name:</label>
+      <input
+        type="text"
+        id="lastname"
+        name="lastname"
+        formControlName="lastname"
+        placeholder="Enter Last Name"
+      />
+      <div class="test" *ngIf="getvalue['lastname'].touched && getvalue['lastname'].invalid">
+        <div
+          *ngIf="
+            getvalue['lastname'].errors &&
+            getvalue['lastname'].errors['required']
+          "
+        >
+          *Last Name is required
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="email">Email Address:</label>
+      <input
+        type="text"
+        id="email"
+        name="email"
+        formControlName="email"
+        placeholder="abc@gmail.com"
+      />
+      <div class="test" *ngIf="getvalue['email'].touched && getvalue['email'].invalid">
+        <div
+          *ngIf="
+            getvalue['email'].errors &&
+            getvalue['email'].errors['required']
+          "
+        >
+          *Email Address is required
+        </div>
+        <div
+          *ngIf="
+            getvalue['email'].errors &&
+            getvalue['email'].errors['email']
+          "
+        >
+          *Please enter proper format
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="phone">Phone No:</label>
+      <input type="text" id="phone" name="phone" formControlName="phone" />
+      <div class="test" *ngIf="getvalue['phone'].touched && getvalue['phone'].invalid">
+        <div
+          *ngIf="
+            getvalue['phone'].errors && getvalue['phone'].errors['required']
+          "
+        >
+          *Phone number is required
+        </div>
+        <div
+          *ngIf="
+            getvalue['phone'].errors && getvalue['phone'].errors['maxlength']
+          "
+        >
+          Maximum length should be 10
+        </div>
+      </div>
+    </div>
+    <div>
+      <label for="date">Date of Employeement:</label>
+      <input type="date" id="date" name="date" formControlName="date" /><br />
+    </div>
+    <div>
+      <label for="gender">Gender:</label>
+      <input
+        type="radio"
+        id="gender"
+        name="gender"
+        value="Male"
+        formControlName="gender"
+      />
+      <label for="gender">Male</label>
+      <input
+        type="radio"
+        id="gender"
+        name="gender"
+        value="Female"
+        formControlName="gender"
+      />
+      <label for="gender">Female</label>
+      <input
+        type="radio"
+        id="gender"
+        name="gender"
+        value="Other"
+        formControlName="gender"
+      />
+      <label for="gender">Other</label>
+    </div>
+    <div>
+      <label for="department">Department:</label>
+      <select name="department" id="department" formControlName="department">
+        <option
+          *ngFor="let department of departmentData"
+          [value]="department.name"
+        >
+          {{ department.name }}
+        </option>
+      </select>
+    </div>
+    <div>
+      <button type="submit" [disabled]="myForm.invalid" routerLink="submit">
+        Submit
+      </button>
+      <button type="button" (click)="resetForm()">Reset</button>
+    </div>
+  </div>
+</form>
