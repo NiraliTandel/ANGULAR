@@ -3,3 +3,29 @@ table, th, tr, td {
     border: 1px solid black;
     padding: .75rem;
 }
+
+th {
+    background-color:darkkhaki;
+}
+
+td {
+    background-color:lightyellow;
+}
+
+a {
+    color:blue;
+}
+
+.search {
+    background-color:lightyellow;
+}
+
+.add-btn {
+    background-color:green;
+    color:white;
+}
+
+.delete-btn {
+    background-color:darkred;
+    color:white;
+}

@@ -1,5 +1,5 @@
-<form [formGroup]="myForm" (ngSubmit)="OnSubmit()">
-  <div class="container">
+<div class="container">
+  <form [formGroup]="myForm" (ngSubmit)="OnSubmit()">
     <div>
       <label for="firstname">First Name:</label>
       <input
@@ -9,7 +9,8 @@
         formControlName="firstname"
         placeholder="Enter First Name"
       />
-      <div class="test"
+      <div
+        class="test"
         *ngIf="getvalue['firstname'].touched && getvalue['firstname'].invalid"
       >
         <div
@@ -47,7 +48,10 @@
         formControlName="lastname"
         placeholder="Enter Last Name"
       />
-      <div class="test" *ngIf="getvalue['lastname'].touched && getvalue['lastname'].invalid">
+      <div
+        class="test"
+        *ngIf="getvalue['lastname'].touched && getvalue['lastname'].invalid"
+      >
         <div
           *ngIf="
             getvalue['lastname'].errors &&
@@ -67,20 +71,19 @@
         formControlName="email"
         placeholder="abc@gmail.com"
       />
-      <div class="test" *ngIf="getvalue['email'].touched && getvalue['email'].invalid">
+      <div
+        class="test"
+        *ngIf="getvalue['email'].touched && getvalue['email'].invalid"
+      >
         <div
           *ngIf="
-            getvalue['email'].errors &&
-            getvalue['email'].errors['required']
+            getvalue['email'].errors && getvalue['email'].errors['required']
           "
         >
           *Email Address is required
         </div>
         <div
-          *ngIf="
-            getvalue['email'].errors &&
-            getvalue['email'].errors['email']
-          "
+          *ngIf="getvalue['email'].errors && getvalue['email'].errors['email']"
         >
           *Please enter proper format
         </div>
@@ -89,7 +92,10 @@
     <div>
       <label for="phone">Phone No:</label>
       <input type="text" id="phone" name="phone" formControlName="phone" />
-      <div class="test" *ngIf="getvalue['phone'].touched && getvalue['phone'].invalid">
+      <div
+        class="test"
+        *ngIf="getvalue['phone'].touched && getvalue['phone'].invalid"
+      >
         <div
           *ngIf="
             getvalue['phone'].errors && getvalue['phone'].errors['required']
@@ -149,10 +155,17 @@
       </select>
     </div>
     <div>
-      <button type="submit" [disabled]="myForm.invalid" routerLink="submit">
+      <button
+        class="submit-btn"
+        type="submit"
+        [disabled]="myForm.invalid"
+        routerLink="submit"
+      >
         Submit
       </button>
-      <button type="button" (click)="resetForm()">Reset</button>
+      <button class="reset-btn" type="button" (click)="resetForm()">
+        Reset
+      </button>
     </div>
-  </div>
-</form>
+  </form>
+</div>

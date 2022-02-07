@@ -7,12 +7,14 @@ import { ListComponent } from './components/list/list.component';
 import { UserComponent } from './user.component';
 import { FormService } from './services/form.service';
 import { HttpClientModule } from '@angular/common/http';
+import { UserFilterPipe } from './pipes/user-filter.pipe';
 
 @NgModule({
   declarations: [
     FormComponent,
     ListComponent,
-    UserComponent
+    UserComponent,
+    UserFilterPipe
   ],
   imports: [
     CommonModule,

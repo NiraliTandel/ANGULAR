@@ -29,7 +29,7 @@
       "phone": "+918511007563",
       "date": "2022-02-15",
       "gender": "Female",
-      "department": "Frontend",
+      "department": "Database",
       "id": 1
     },
     {
@@ -37,10 +37,20 @@
       "lastname": "Parmar",
       "email": "aayu@gmail.com",
       "phone": "9624595320",
-      "date": "2022-02-11",
+      "date": "2022-02-07",
       "gender": "Female",
       "department": "Mobile",
       "id": 2
+    },
+    {
+      "firstname": "Nirali",
+      "lastname": "Tandel",
+      "email": "niralitandel8909@gmail.com",
+      "phone": "+918511007563",
+      "date": "2022-02-07",
+      "gender": "Female",
+      "department": "Database",
+      "id": 3
     }
   ]
 }

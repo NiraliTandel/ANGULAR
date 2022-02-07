@@ -15,7 +15,6 @@ export class FormComponent implements OnInit {
   id!: number;
   isAddMode?: boolean;
 
-
   constructor(
     private fb: FormBuilder,
     private service: FormService,
@@ -48,7 +47,7 @@ export class FormComponent implements OnInit {
   get getvalue() {
     return this.myForm['controls'];
   }
-  
+
   getDepartmentList() {
     this.service.getDepartment().subscribe(
       (result: Department[]) => {
@@ -61,9 +60,9 @@ export class FormComponent implements OnInit {
   }
 
   OnSubmit() {
-    if(this.isAddMode) {
+    if (this.isAddMode) {
       this.saveData()
-    }else {
+    } else {
       this.updateData()
     }
   }
@@ -72,24 +71,24 @@ export class FormComponent implements OnInit {
     console.log(this.myForm);
     this.service.createUser(this.myForm.value).subscribe(
       (result) => {
-      alert("Data saved successfully")
-    }, (error) => {
-      alert("Somthing went wrong")
-    })
+        alert("Data saved successfully")
+      }, (error) => {
+        alert("Somthing went wrong")
+      })
 
-    this.router.navigate(['submit'])
+    this.router.navigate(['reactiveform'])
   }
 
   updateData() {
     console.log(this.myForm);
-    this.service.updateUser(this.id,this.myForm.value).subscribe(
+    this.service.updateUser(this.id, this.myForm.value).subscribe(
       (result) => {
-      alert("Data updated successfully")
-    }, (error) => {
-      alert("Somthing went wrong")
-    })
+        alert("Data updated successfully")
+      }, (error) => {
+        alert("Somthing went wrong")
+      })
 
-    this.router.navigate(['submit'])
+    this.router.navigate(['reactiveform'])
   }
 
   resetForm() {

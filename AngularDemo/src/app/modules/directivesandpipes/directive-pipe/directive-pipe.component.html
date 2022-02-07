@@ -1,0 +1,54 @@
+<div>
+  <h2
+    appHighlight
+    style="width: 500px; text-align: center; border: 1px solid black"
+  >
+    List of Students
+  </h2>
+  <table
+    style="
+      border: 1px solid black;
+      border-collapse: collapse;
+      width: 500px;
+      height: 500px;
+    "
+  >
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr
+        *ngFor="let listdata of listData; let index = index; trackBy: trackByid"
+      >
+        <td>
+          {{ listdata.id }}
+        </td>
+        <td>
+          {{ listdata.name | firstcap }}
+        </td>
+        <td>
+          {{ listdata.email }}
+        </td>
+        <td>
+          {{ listdata.salary | currency: listdata.currencycode }}
+        </td>
+        <td>
+          <button (click)="indexClick(index)">Submit</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<h3>
+  Date:<span
+    >{{ currentDate | date: "dd/mm/yyyy" }} Time:{{
+      currentDate | date: "hh:mm:ss"
+    }}</span
+  >
+</h3>

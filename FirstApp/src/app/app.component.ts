@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'Welcome!';
   name = 'Nirali';
-  itemImageUrl = '../../assets/beautiful-flower-pictures.jpg';
+  itemImageUrl = '../assets/beautiful-flower-pictures.jpg';
   data:string="";
 
   ngOnInit(): void {}

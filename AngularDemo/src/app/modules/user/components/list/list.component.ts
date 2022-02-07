@@ -12,7 +12,9 @@ export class ListComponent implements OnInit {
 
   userData: User[] = [];
 
-  constructor(private service : FormService, private router : Router) { }
+  searchText: string = "";
+
+  constructor(private service: FormService, private router: Router) { }
 
   ngOnInit(): void {
     this.getUserData();
@@ -21,7 +23,7 @@ export class ListComponent implements OnInit {
   getUserData() {
     this.service.getUserList().subscribe(
       (result) => {
-        this.userData=result;
+        this.userData = result;
       },
       (error) => {
         console.log('Something went wrong');
