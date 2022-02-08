@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { User } from '../../models/user.model';
+import { Department, User } from '../../models/user.model';
 import { FormService } from '../../services/form.service';
 
 @Component({
@@ -11,13 +11,14 @@ import { FormService } from '../../services/form.service';
 export class ListComponent implements OnInit {
 
   userData: User[] = [];
-
   searchText: string = "";
+  department: Department[] = [];
 
   constructor(private service: FormService, private router: Router) { }
 
   ngOnInit(): void {
     this.getUserData();
+    this.getDepartment();
   }
 
   getUserData() {
@@ -33,7 +34,7 @@ export class ListComponent implements OnInit {
 
   deleteUser(id: number) {
     this.service.deleteUser(id).subscribe(
-      (result) => {
+      () => {
         alert(id + ' is Deleted');
         this.getUserData();
       },
@@ -41,6 +42,10 @@ export class ListComponent implements OnInit {
         alert('Something went wrong');
       }
     );
+  }
+
+  getDepartment() {
+    this.service.getDepartment().subscribe((data) => (this.department = data));
   }
 
 }

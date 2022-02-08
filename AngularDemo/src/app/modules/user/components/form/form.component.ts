@@ -28,10 +28,7 @@ export class FormComponent implements OnInit {
     console.log(this.myForm);
 
     this.getDepartmentList();
-
-    if (!this.isAddMode) {
-      this.service.getById(this.id).subscribe((x) => this.myForm.patchValue(x));
-    }
+    this.getbyId();
   }
 
   myForm = this.fb.group({
@@ -77,6 +74,12 @@ export class FormComponent implements OnInit {
       })
 
     this.router.navigate(['reactiveform'])
+  }
+
+  getbyId() {
+    if (!this.isAddMode) {
+      this.service.getById(this.id).subscribe((x) => this.myForm.patchValue(x));
+    }
   }
 
   updateData() {

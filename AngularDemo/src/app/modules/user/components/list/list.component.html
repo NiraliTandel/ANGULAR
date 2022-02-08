@@ -1,14 +1,14 @@
 <h2>
   <input
     class="search"
-    type="text"
+    type="search"
     placeholder="Search..."
     name="search"
     [(ngModel)]="searchText"
   />
   <button class="add-btn" routerLink="add">ADD</button>
 </h2>
-<div *ngIf="userData?.length; else no_data_templ">
+<div *ngIf="userData?.length">
   <table>
     <thead>
       <tr>
@@ -24,13 +24,13 @@
     <tbody>
       <tr *ngFor="let user of userData | userFilter: searchText; let i = index">
         <th scope="row">{{ i + 1 }}.</th>
-        <td>{{ user.firstname }}</td>
+        <td>{{ user.firstname + " " + user.lastname }}</td>
         <td>{{ user.email }}</td>
         <td>{{ user.gender }}</td>
         <td>{{ user.date | date: "MM/dd/yyyy" }}</td>
-        <td>{{ user.department }}</td>
+        <td>{{ user.department | department: department }}</td>
         <td>
-          <a routerLink="edit/{{ user.id }}">Edit</a>
+          <button class="edit-btn" routerLink="edit/{{ user.id }}">Edit</button>
           <button class="delete-btn" (click)="deleteUser(user.id)">
             Delete
           </button>
@@ -39,4 +39,4 @@
     </tbody>
   </table>
 </div>
-<ng-template #no_data_templ> No data found... </ng-template>
+<div *ngIf="!userData?.length">No data found...</div>

@@ -2,7 +2,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { User } from '../models/user.model';
 
 @Pipe({
-  name: 'userFilter'
+  name: 'userFilter',
 })
 export class UserFilterPipe implements PipeTransform {
 
@@ -12,7 +12,7 @@ export class UserFilterPipe implements PipeTransform {
     }
     return users.filter((data: User) => {
       return data.firstname.toLowerCase().match(searchText.toLowerCase())
-    })
+    });
   }
 
 }

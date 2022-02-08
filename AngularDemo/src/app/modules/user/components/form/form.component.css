@@ -18,9 +18,14 @@ label {
 .submit-btn {
   background-color: green;
   color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 10px;
 }
 
 .reset-btn {
   background-color: orangered;
   color: white;
+  padding: 5px;
+  border-radius: 5px;
 }

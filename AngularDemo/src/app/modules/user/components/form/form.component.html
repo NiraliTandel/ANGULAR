@@ -117,38 +117,20 @@
       <input type="date" id="date" name="date" formControlName="date" /><br />
     </div>
     <div>
-      <label for="gender">Gender:</label>
-      <input
-        type="radio"
-        id="gender"
-        name="gender"
-        value="Male"
-        formControlName="gender"
-      />
-      <label for="gender">Male</label>
-      <input
-        type="radio"
-        id="gender"
-        name="gender"
-        value="Female"
-        formControlName="gender"
-      />
-      <label for="gender">Female</label>
-      <input
-        type="radio"
-        id="gender"
-        name="gender"
-        value="Other"
-        formControlName="gender"
-      />
-      <label for="gender">Other</label>
+      <label>Gender: </label>
+      <input type="radio" name="gender" id="male" value="Male" formControlName="gender"/>
+      <label for="male">Male</label>
+      <input type="radio" name="gender" id="female" value="Female" formControlName="gender"/>
+      <label for="female">Female</label>
+      <input type="radio" name="gender" id="other" value="Other" formControlName="gender"/>
+      <label for="other">Other</label>
     </div>
     <div>
       <label for="department">Department:</label>
       <select name="department" id="department" formControlName="department">
         <option
           *ngFor="let department of departmentData"
-          [value]="department.name"
+          [value]="department.id"
         >
           {{ department.name }}
         </option>

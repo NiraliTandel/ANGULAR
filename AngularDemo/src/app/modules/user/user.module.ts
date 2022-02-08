@@ -8,13 +8,15 @@ import { UserComponent } from './user.component';
 import { FormService } from './services/form.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserFilterPipe } from './pipes/user-filter.pipe';
+import { DepartmentPipe } from './pipes/department.pipe';
 
 @NgModule({
   declarations: [
     FormComponent,
     ListComponent,
     UserComponent,
-    UserFilterPipe
+    UserFilterPipe,
+    DepartmentPipe
   ],
   imports: [
     CommonModule,
