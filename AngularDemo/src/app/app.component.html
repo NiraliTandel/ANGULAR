@@ -1,9 +1,11 @@
-<app-header></app-header>
-<div class="wrapper d-flex">
-  <div class="sidebar">
-    <app-sidebar></app-sidebar>
+<section class="wrapper d-flex flex-column overflow-hidden">
+  <app-header></app-header>
+  <div class="d-flex flex-grow-1 overflow-hidden">
+    <div class="sidebar">
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="flex-grow-1 overflow-auto margin">
+      <router-outlet></router-outlet>
+    </div>
   </div>
-  <div class="flex-grow overflow margin">
-    <router-outlet></router-outlet>
-  </div>
-</div>
+</section>

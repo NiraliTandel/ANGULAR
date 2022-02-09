@@ -1,0 +1,154 @@
+<main>
+  <div class="wrapper">
+    <table>
+      <tr class="border-bottom">
+        <td>
+          <h1>{{ resume.name }}</h1>
+          <em
+            ><h2>{{ resume.designation }}</h2></em
+          >
+        </td>
+        <td class="header-right">
+          <p><button>Download PDF</button></p>
+          <p>
+            <a>{{ resume.email }}</a>
+          </p>
+          <b>{{ resume.phone }}</b>
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr class="border-bottom">
+        <td class="profile">
+          <em>Profile</em>
+        </td>
+        <td>{{ resume.profile }}</td>
+      </tr>
+    </table>
+    <table>
+      <tr class="border-bottom">
+        <td class="padding-width">
+          <em>Skills</em>
+        </td>
+        <td class="padding">
+          <div class="border-bottom" *ngFor="let skills of resume.skills">
+            <h3>{{ skills.skill }}</h3>
+            <p>{{ skills.description }}</p>
+          </div>
+          <!-- <table>
+            <tr>
+              <td class="skills">
+                <h3>Web Design</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquid quos labore ullam
+                </p>
+              </td>
+              <td class="skills">
+                <h3>Interface Design</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquid quos labore ullam
+                </p>
+              </td>
+              <td class="skills">
+                <h3>Project Direction</h3>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Aliquid quos labore ullam
+                </p>
+              </td>
+            </tr>
+          </table> -->
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr class="border-bottom">
+        <td class="padding-width">
+          <em>Technical</em>
+        </td>
+        <td>
+          <div class="border-bottom" *ngFor="let technical of resume.technical">
+            <p>{{ technical.tech }}</p>
+          </div>
+          <!-- <table>
+            <tr class="border-bottom">
+              <td class="width">XHTML</td>
+              <td class="width">Jquery</td>
+              <td class="width">OS X</td>
+            </tr>
+            <tr class="border-bottom">
+              <td>CSS</td>
+              <td>PHP</td>
+              <td>Windows XP/Vista</td>
+            </tr>
+            <tr>
+              <td>JavaScript</td>
+              <td>PHP</td>
+              <td>Windows XP/Vista</td>
+            </tr>
+          </table> -->
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr class="border-bottom">
+        <td class="padding-width">
+          <em>Experience</em>
+        </td>
+        <td class="padding">
+          <div
+            class="border-bottom"
+            *ngFor="let experience of resume.experience"
+          >
+            <h3>{{ experience.experience }}</h3>
+            <p>{{ experience.year }}</p>
+            <p>{{ experience.post }}</p>
+            <p>{{ experience.desc }}</p>
+          </div>
+          <!-- <table>
+            <tr class="border-bottom">
+              <td class="padding">
+                <h3>Facebook</h3>
+                <p>Senior Interface Designer</p>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum
+                  officiis hic eius exercitationem distinctio esse.
+                </p>
+              </td>
+              <td class="experience">2005-2007</td>
+            </tr>
+            <tr>
+              <td class="padding">
+                <h3>Apple Inc.</h3>
+                <p>Senior Interface Designer</p>
+                <p>
+                  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum
+                  officiis hic eius exercitationem distinctio esse.
+                </p>
+              </td>
+              <td class="experience">2005-2007</td>
+            </tr>
+          </table> -->
+        </td>
+      </tr>
+    </table>
+    <table>
+      <tr class="border-bottom">
+        <td class="padding-width">
+          <em>Education</em>
+        </td>
+        <td class="padding">
+          <div class="border-bottom" *ngFor="let education of resume.education">
+            <h3>{{ education.university }}</h3>
+            <p>{{ education.gpa }}</p>
+          </div>
+        </td>
+      </tr>
+    </table>
+    <h4 class="footer">
+      {{ resume.name }} - <a>{{ resume.email }}</a> - {{ resume.phone }}
+    </h4>
+  </div>
+</main>

@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
@@ -5,6 +6,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
+import { ResumeBuilderModule } from './modules/resume-builder/resume-builder.module';
 
 @NgModule({
   declarations: [
@@ -15,7 +17,9 @@ import { CoreModule } from './core/core.module';
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    CoreModule
+    CoreModule,
+    ResumeBuilderModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

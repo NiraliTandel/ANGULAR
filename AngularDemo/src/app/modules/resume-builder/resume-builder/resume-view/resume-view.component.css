@@ -1,0 +1,71 @@
+* {
+  font-family: source serif pro;
+  font-display: swap;
+  box-sizing: border-box;
+}
+
+table,
+td {
+  border-collapse: collapse;
+  padding: 10px;
+  vertical-align: top;
+}
+
+table {
+  width: 100%;
+}
+
+.wrapper {
+  background-color: whitesmoke;
+  padding: 20px;
+  max-width: 900px;
+  margin: auto;
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+}
+
+.border-bottom {
+  border-bottom: 1px solid lightgray;
+}
+
+a {
+    color: red;
+}
+
+.header-right {
+    width: 200px;
+}
+
+.profile {
+    width: 150px; 
+    padding-top: 10px;
+}
+
+.padding-width {
+    width: 150px; 
+    padding-top: 20px;
+}
+
+.padding {
+    padding: 0px;
+}
+
+.skills {
+    padding: 0px; 
+    width: 230px; 
+    padding-right: 5px;
+}
+
+.width {
+    width: 230px;
+}
+
+.experience {
+    width: 20%; 
+    padding: 20px;
+}
+
+.footer {
+    text-align: center;
+}
+
