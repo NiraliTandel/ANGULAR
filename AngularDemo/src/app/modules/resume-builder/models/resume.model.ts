@@ -1,5 +1,4 @@
 export interface Resume {
-    value: Resume;
     name: string;
     designation: string;
     email: string;
@@ -21,7 +20,7 @@ interface Technical {
 }
 
 interface Experience {
-    experience: string;
+    expname: string;
     year: number;
     post: string;
     desc: string;

@@ -14,8 +14,8 @@ export class ResumeService {
     this.apiLink = environment.baseURL;
    }
 
-   getData(): Observable<Resume> {
-     return this.http.get<Resume>(`${this.apiLink}/resume`);
+   getData(id: number): Observable<Resume> {
+     return this.http.get<Resume>(`${this.apiLink}/resume/${id}`);
    }
 
    saveData(data: Resume): Observable<Resume> {

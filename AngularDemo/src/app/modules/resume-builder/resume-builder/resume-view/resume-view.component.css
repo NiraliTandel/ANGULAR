@@ -19,7 +19,7 @@ table {
   background-color: whitesmoke;
   padding: 20px;
   max-width: 900px;
-  margin: auto;
+  margin: 0 auto;
   border-top: 4px solid black;
   border-bottom: 4px solid black;
 }

@@ -1,13 +1,23 @@
-<h2>
-  <input
-    class="search"
-    type="search"
-    placeholder="Search..."
-    name="search"
-    [(ngModel)]="searchText"
-  />
-  <button class="add-btn" routerLink="add">ADD</button>
-</h2>
+<div>
+<h1 class="padding-bottom">User List</h1>
+<header>
+  <div class="padding-bottom" style="position: relative">
+    <span
+      ><input
+        type="search"
+        class="search"
+        name="search"
+        id="search"
+        placeholder="Search User"
+        [(ngModel)]="searchText"
+    /></span>
+    <span
+      class="icon-search_icon padding-right"
+      style="position: absolute; top: 8px; left: 172px"
+    ></span>
+    <button class="add-btn" routerLink="add">+Add User</button>
+  </div>
+</header>
 <div *ngIf="userData?.length">
   <table>
     <thead>

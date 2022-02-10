@@ -1,37 +1,47 @@
 label {
-    font-weight: bold;
-  }
-  
-  .container {
-    width: 50%;
-    padding: 2rem;
-    margin: 2rem;
-    line-height: 1.5rem;
-    background-color: whitesmoke;
-    border: 1px solid black;
-  }
+  font-weight: bold;
+}
 
-  .padding-bottom {
-    padding-bottom: 1rem;
-  }
-  
-  .test {
-    color: red;
-  }
+.container {
+  width: 500px;
+  padding: 2rem;
+  margin: 0 auto;
+  line-height: 1.5rem;
+  background-color: whitesmoke;
+  border: 1px solid black;
+}
 
-  .submit-btn {
-    background-color: green;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-    margin-right: 10px;
-  }
-  
-  .reset-btn {
-    background-color: orangered;
-    color: white;
-    padding: 5px;
-    border-radius: 5px;
-  }
+.padding-bottom {
+  padding-bottom: 1rem;
+}
 
-  
+.test {
+  color: red;
+}
+
+.add-btn {
+  background-color: dodgerblue;
+  color: white;
+  border-radius: 5px;
+}
+
+.delete-btn {
+  background-color: brown;
+  color: white;
+  border-radius: 5px;
+}
+
+.submit-btn {
+  background-color: green;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.reset-btn {
+  background-color: orangered;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}

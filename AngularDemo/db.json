@@ -53,5 +53,39 @@
       "id": 3
     }
   ],
-  "resume": []
+  "resume": [
+    {
+      "name": "",
+      "designation": "",
+      "email": "",
+      "phone": "",
+      "profile": "",
+      "skills": [
+        {
+          "skill": "",
+          "description": ""
+        }
+      ],
+      "technical": [
+        {
+          "tech": ""
+        }
+      ],
+      "experience": [
+        {
+          "expname": "",
+          "year": "",
+          "post": "",
+          "desc": ""
+        }
+      ],
+      "education": [
+        {
+          "university": "",
+          "gpa": ""
+        }
+      ],
+      "id": 1
+    }
+  ]
 }

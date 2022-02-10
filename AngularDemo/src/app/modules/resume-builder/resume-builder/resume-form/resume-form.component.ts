@@ -26,13 +26,13 @@ export class ResumeFormComponent implements OnInit {
   myResumeForm = this.fb.group({
     name: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(8)]],
     designation: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
+    phone: ['', Validators.required],
     profile: ['', Validators.required],
     skills: this.fb.array([this.skillField()]),
     technical: this.fb.array([this.technicalField()]),
     experience: this.fb.array([this.experienceField()]),
-    education: this.fb.array([this.educationField()]),
-    email: ['', [Validators.required, Validators.email]],
-    phone: ['', Validators.required],
+    education: this.fb.array([this.educationField()])
   });
   
   get getvalue() {
@@ -84,7 +84,7 @@ export class ResumeFormComponent implements OnInit {
 
   experienceField(): FormGroup {
     return this.fb.group({
-      experience: ['',Validators.required],
+      expname: ['',Validators.required],
       year: ['',Validators.required],
       post: ['',Validators.required],
       desc: ['',Validators.required],
@@ -129,11 +129,11 @@ export class ResumeFormComponent implements OnInit {
   }
 
   onSubmit() {
-    this.service.deleteData(1).subscribe((id:number)=>{
-      this.service.saveData(this.resume.value).subscribe(()=>{
-        this.route.navigate([''])
+    this.service.deleteData(1).subscribe(()=>{
+      this.service.saveData(this.myResumeForm.value).subscribe();
+        this.route.navigate(['/resumebuilder/resumeview']);
       })
-    });
+      console.log(this.myResumeForm.value);   
   }
 
   resetForm() {

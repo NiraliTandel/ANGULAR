@@ -3,9 +3,9 @@ label {
 }
 
 .container {
-  width: 50%;
+  width: 500px;
   padding: 2rem;
-  margin: 2rem;
+  margin: 0 auto;
   line-height: 2.5rem;
   background-color: lightyellow;
   border: 1px solid black;
@@ -28,4 +28,12 @@ label {
   color: white;
   padding: 5px;
   border-radius: 5px;
+}
+
+.cancel-btn {
+  background-color:dodgerblue;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 100px;
 }

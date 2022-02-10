@@ -18,7 +18,7 @@ export class ResumeViewComponent implements OnInit {
   }
 
   getUserData() {
-    this.service.getData().subscribe((data)=>{
+    this.service.getData(1).subscribe((data)=>{
       this.resume=data;
     })
   }
