@@ -10,8 +10,7 @@ const routes: Routes = [
     children: [
       { path: '', component: ListComponent },
       { path: 'add', component: FormComponent },
-      { path: 'search', component: ListComponent },
-      { path: 'reset', component: FormComponent },
+      { path: 'cancel', component: ListComponent },
       { path: 'edit/:id', component: FormComponent }
     ]
   },

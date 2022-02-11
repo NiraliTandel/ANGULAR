@@ -3,29 +3,17 @@ aside {
   flex-direction: column;
   flex: 0 0 200px;
   height: 100%;
-  border: 1px solid #f1f1f3;
+  border: 1px solid #f8f8fa;
   position: relative;
 }
 
-.d-flex {
-  display: flex;
-  align-items: center;
-}
-
-.flex-grow-1 {
-  flex-grow: 1;
-}
-
-.overflow-auto {
-  overflow: auto;
-}
-
 .angular {
-  border-bottom: 2px solid #f1f1f3;
+  border-bottom: 2px solid #f8f8fa;
   height: 72px;
   padding: 20px;
   margin: 0;
   text-align: left;
+  font-size: 2rem;
 }
 
 a {
@@ -34,14 +22,18 @@ a {
 
 a:hover {
   text-decoration: none;
-  background-color: rgb(177, 177, 230);
-  color: blue;
+  background-color: #ebedfc;
+  color: #2f55e4;
   border-radius: 5px;
 }
 
 .icon {
   height: 24px;
   color: #898989;
+}
+
+.color {
+  color: black;
 }
 
 .padding-top {
@@ -54,10 +46,6 @@ a:hover {
 
 .padding-right {
   padding-right: 10px;
-}
-
-.color {
-  color: black;
 }
 
 nav {
@@ -75,38 +63,13 @@ ul {
   text-align: left;
 }
 
-.border-bottom {
-  border-bottom: 1px solid #f1f1f3;
+.logout {
+  position: absolute;
+  bottom: 0;
+  border-top: 2px solid #f1f1f3;
+  width: 100%;
+  height: 72px;
+  padding: 20px;
+  margin: 0;
+  text-align: left;
 }
-
-/* aside {
-    display: flex;
-    font-size: 20px;
-    height: 100%;
-    flex: 0 0 200px;
-    background-color:cyan;
-    color:black;
-}
-
-a {
-    color:black;
-    display: block;
-    font-weight: bold;
-    padding: 10px;
-    text-decoration: none;
-}
-
-a:hover {
-    background-color:indigo;
-    color:white;
-    border-radius: 5px;
-}
-
-ul {
-    padding: 0;
-}
-
-li {
-    list-style: none;
-    padding: 10px;
-} */

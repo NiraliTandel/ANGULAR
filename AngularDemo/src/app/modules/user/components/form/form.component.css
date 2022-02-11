@@ -1,38 +1,50 @@
-label {
-  font-weight: bold;
-}
-
 .container {
   width: 500px;
   padding: 2rem;
   margin: 0 auto;
   line-height: 2.5rem;
-  background-color: lightyellow;
-  border: 1px solid black;
+  border-radius: 10px;
+  background-color: white;
+}
+
+.padding-right {
+  padding-right: 10px;
+}
+
+label {
+  font-weight: bold;
 }
 
 .test {
   color: red;
+  font-size: 12px;
+}
+
+.text-box {
+  width: 50%;
 }
 
 .submit-btn {
-  background-color: green;
+  background-color: #26ad5f;
   color: white;
+  border: none;
   padding: 5px;
   border-radius: 5px;
   margin-right: 10px;
 }
 
 .reset-btn {
-  background-color: orangered;
+  background-color: #2f55e4;
   color: white;
+  border: none;
   padding: 5px;
   border-radius: 5px;
 }
 
 .cancel-btn {
-  background-color:dodgerblue;
+  background-color: #e95654;
   color: white;
+  border: none;
   padding: 5px;
   border-radius: 5px;
   margin-left: 100px;

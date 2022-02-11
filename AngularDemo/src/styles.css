@@ -1,33 +1,46 @@
 /* You can add global styles to this file, and also import other style files */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
 }
 
 html,
 body {
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.align-item-center {
+  align-items: center;
 }
 
 .wrapper {
-    height: 100%;
+  height: 100%;
 }
 
 .flex-column {
-    flex-direction: column;
+  flex-direction: column;
 }
 
 .flex-grow-1 {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .overflow-hidden {
-    overflow: hidden;
+  overflow: hidden;
 }
 
 .overflow-auto {
-    overflow: auto;
+  overflow: auto;
 }

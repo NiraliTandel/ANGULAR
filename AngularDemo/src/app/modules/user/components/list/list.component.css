@@ -1,19 +1,48 @@
 table,
-th,
-tr,
-td {
+tr {
   border-collapse: collapse;
-  border: 1px solid black;
-  padding: 0.75rem;
-  margin-top: 10px;
+  border: 2px solid #f8f8fa;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 20px;
+  width: 97%;
+  overflow: hidden;
+  background-color: white;
 }
 
-th {
-  background-color: darkkhaki;
-}
-
+th,
 td {
-  background-color: lightyellow;
+  text-align: center;
+  padding: 10px;
+}
+
+h1 {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.padding-right {
+  padding-right: 10px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+  top: 13px;
+  left: 220px;
 }
 
 .icon {
@@ -21,44 +50,38 @@ td {
   color: #898989;
 }
 
-.padding-bottom {
-  padding-bottom: 25px;
-}
-
-.padding-right {
-  padding-right: 10px;
-}
-
 .search {
-  height: 32px;
-  width: 200px; 
-  background-color: lightyellow;
-  padding: 5px;
+  height: 40px;
+  width: 250px;
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #f8f8fa;
   border-radius: 10px;
-  margin-right: 10px;
 }
 
 .add-btn {
-  background-color:mediumblue;
+  background-color: #2f55e4;
   color: white;
   padding: 5px;
   border-radius: 10px;
   border: none;
-  height: 32px;
+  height: 40px;
   width: 150px;
 }
 
 .edit-btn {
-  background-color:darkgreen;
+  background-color: #26ad5f;
   color: white;
+  border: none;
   padding: 5px;
   border-radius: 5px;
   margin-right: 10px;
 }
 
 .delete-btn {
-  background-color: darkred;
+  background-color: #e95654;
   color: white;
+  border: none;
   padding: 5px;
   border-radius: 5px;
 }

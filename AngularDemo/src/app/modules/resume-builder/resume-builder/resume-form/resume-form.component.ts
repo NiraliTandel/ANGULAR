@@ -11,7 +11,7 @@ import { ResumeService } from '../../services/resume.service';
 })
 export class ResumeFormComponent implements OnInit {
   resume: Resume;
-
+  
 
   constructor(
     private fb : FormBuilder,

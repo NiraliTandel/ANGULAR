@@ -8,6 +8,7 @@
         name="firstname"
         formControlName="firstname"
         placeholder="Enter First Name"
+        class="text-box"
       />
       <div
         class="test"
@@ -47,6 +48,7 @@
         name="lastname"
         formControlName="lastname"
         placeholder="Enter Last Name"
+        class="text-box"
       />
       <div
         class="test"
@@ -70,6 +72,7 @@
         name="email"
         formControlName="email"
         placeholder="abc@gmail.com"
+        class="text-box"
       />
       <div
         class="test"
@@ -85,13 +88,20 @@
         <div
           *ngIf="getvalue['email'].errors && getvalue['email'].errors['email']"
         >
-          *Please enter proper format
+          Please enter valid email
         </div>
       </div>
     </div>
     <div>
       <label for="phone">Phone No:</label>
-      <input type="text" id="phone" name="phone" formControlName="phone" />
+      <input
+        type="text"
+        id="phone"
+        name="phone"
+        formControlName="phone"
+        maxlength="10"
+        placeholder="+91 8511007563"
+      />
       <div
         class="test"
         *ngIf="getvalue['phone'].touched && getvalue['phone'].invalid"
@@ -125,7 +135,7 @@
         value="Male"
         formControlName="gender"
       />
-      <label for="male">Male</label>
+      <label for="male" class="padding-right">Male</label>
       <input
         type="radio"
         name="gender"
@@ -133,7 +143,7 @@
         value="Female"
         formControlName="gender"
       />
-      <label for="female">Female</label>
+      <label for="female" class="padding-right">Female</label>
       <input
         type="radio"
         name="gender"
@@ -154,21 +164,29 @@
         </option>
       </select>
     </div>
-    <div>
-      <button
-        class="submit-btn"
-        type="submit"
-        [disabled]="myForm.invalid"
-        routerLink="submit"
-      >
-        Submit
-      </button>
-      <button class="reset-btn" type="button" (click)="resetForm()">
-        Reset
-      </button>
-      <button class="cancel-btn" type="button">
-        Cancel
-      </button>
+    <div class="d-flex space-between">
+      <div>
+        <button
+          class="submit-btn"
+          type="submit"
+          [disabled]="myForm.invalid"
+          routerLink="submit"
+        >
+          Submit
+        </button>
+        <button class="reset-btn" type="button" (click)="resetForm()">
+          Reset
+        </button>
+      </div>
+      <div>
+        <button
+          class="cancel-btn"
+          type="button"
+          routerLink="/reactiveform/cancel"
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   </form>
 </div>

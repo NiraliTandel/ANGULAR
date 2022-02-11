@@ -1,29 +1,12 @@
-.d-flex {
-    display: flex;
-}
-
-.flex-grow {
-    flex-grow: 1;
-}
-
-.align-item {
-    align-items: center;
-}
-
-.justify-content {
-    justify-content: center;
-}
-
 .sidebar {
-    height: 100%;
-    width: 300px;
-}
-
-.overflow-auto {
-    overflow: auto;
+  height: 100%;
+  width: 300px;
 }
 
 .margin-10 {
-    margin: 10px;
+  margin: 10px;
 }
 
+.bg-color {
+  background-color: #f7f8fa;
+}

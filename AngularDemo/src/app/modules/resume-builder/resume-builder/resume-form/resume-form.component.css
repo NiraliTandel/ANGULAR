@@ -9,6 +9,7 @@ label {
   line-height: 1.5rem;
   background-color: whitesmoke;
   border: 1px solid black;
+  border-radius: 10px;
 }
 
 .padding-bottom {
@@ -17,16 +18,21 @@ label {
 
 .test {
   color: red;
+  font-size: 12px;
+}
+
+.text-box {
+  width: 50%;
 }
 
 .add-btn {
-  background-color: dodgerblue;
+  background-color: #2f55e4;
   color: white;
   border-radius: 5px;
 }
 
 .delete-btn {
-  background-color: brown;
+  background-color: #e95654;
   color: white;
   border-radius: 5px;
 }
@@ -40,7 +46,7 @@ label {
 }
 
 .reset-btn {
-  background-color: orangered;
+  background-color: orange;
   color: white;
   padding: 5px;
   border-radius: 5px;

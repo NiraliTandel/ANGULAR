@@ -1,7 +1,6 @@
-<div>
-<h1 class="padding-bottom">User List</h1>
+<h1>User List</h1>
 <header>
-  <div class="padding-bottom" style="position: relative">
+  <div class="position-relative">
     <span
       ><input
         type="search"
@@ -11,11 +10,10 @@
         placeholder="Search User"
         [(ngModel)]="searchText"
     /></span>
-    <span
-      class="icon-search_icon padding-right"
-      style="position: absolute; top: 8px; left: 172px"
-    ></span>
-    <button class="add-btn" routerLink="add">+Add User</button>
+    <span class="icon-search_icon padding-right position-absolute"></span>
+  </div>
+  <div>
+    <button class="add-btn" routerLink="/reactiveform/add">+ Add User</button>
   </div>
 </header>
 <div *ngIf="userData?.length">

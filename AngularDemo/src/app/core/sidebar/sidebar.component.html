@@ -1,50 +1,72 @@
 <aside>
   <div class="angular">
-    <div class="icon d-flex" href="#">
+    <div class="icon d-flex">
       <span class="icon-angular_logo_icon padding color"></span>
       <span class="color">ANGULAR</span>
     </div>
   </div>
-  <nav class="flex-grow-1 overflow-auto">
-    <ul>
-      <li class="padding-top">
-        <a class="icon nav-1 d-flex" routerLink="angularbasics">
-          <span class="icon-angular_icon padding-right"></span>
-          <span class="color">Angular Basics</span>
-        </a>
-      </li>
-      <li>
-        <a class="icon nav-1 d-flex" routerLink="databinding">
-          <span class="icon-arrows_icon padding-right"></span>
-          <span class="color">Data Binding</span>
-        </a>
-      </li>
-      <li>
-        <a class="icon nav-1 d-flex" routerLink="directivesandpipes">
-          <span class="icon-data_icon padding-right"></span>
-          <span class="color">Directives And Pipes</span>
-        </a>
-      </li>
-      <li>
-        <a class="icon nav-1 d-flex" routerLink="reactiveform">
-          <span class="icon-form_icon padding-right"></span>
-          <span class="color">Reactive Form</span>
-        </a>
-      </li>
-      <li>
-        <a class="icon nav-1 d-flex" routerLink="resumebuilder">
-          <span class="icon-resume_icon padding-right"></span>
-          <span class="color">Resume Builder</span>
-        </a>
-      </li>
-    </ul>
-    <ul>
-      <li>
-        <a class="icon nav-1 d-flex" routerLink="angularbasics">
-          <span class="icon-logout_icon padding-right"></span>
-          <span class="logout color">LogOut</span>
-        </a>
-      </li>
-    </ul>
-  </nav>
+  <div class="d-flex flex-column overflow-auto">
+    <nav class="flex-grow-1">
+      <ul>
+        <li class="padding-top">
+          <a
+            class="icon nav-1 d-flex align-item-center"
+            routerLink="angularbasics"
+          >
+            <span class="icon-angular_icon padding-right"></span>
+            <span class="color">Angular Basics</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="icon nav-1 d-flex align-item-center"
+            routerLink="databinding"
+          >
+            <span class="icon-arrows_icon padding-right"></span>
+            <span class="color">Data Binding</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="icon nav-1 d-flex align-item-center"
+            routerLink="directivesandpipes"
+          >
+            <span class="icon-data_icon padding-right"></span>
+            <span class="color">Directives And Pipes</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="icon nav-1 d-flex align-item-center"
+            routerLink="reactiveform"
+          >
+            <span class="icon-form_icon padding-right"></span>
+            <span class="color">Reactive Form</span>
+          </a>
+        </li>
+        <li>
+          <a
+            class="icon nav-1 d-flex align-item-center padding-bottom"
+            routerLink="resumebuilder"
+          >
+            <span class="icon-resume_icon padding-right"></span>
+            <span class="color">Resume Builder</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+    <div class="logout">
+      <ul>
+        <li>
+          <a
+            class="icon nav-1 d-flex align-item-center"
+            routerLink="angularbasics"
+          >
+            <span class="icon-logout_icon padding-right"></span>
+            <span class="color">LogOut</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </aside>
