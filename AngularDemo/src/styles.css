@@ -13,12 +13,17 @@ body {
   overflow: hidden;
 }
 
+/* Flex */
 .d-flex {
   display: flex;
 }
 
 .space-between {
   justify-content: space-between;
+}
+
+.justify-right {
+  justify-content: right;
 }
 
 .align-item-center {

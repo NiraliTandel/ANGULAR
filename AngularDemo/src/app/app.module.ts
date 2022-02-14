@@ -5,6 +5,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { UserManagementModule } from './Assessment1/user-management/user-management.module';
 import { CoreModule } from './core/core.module';
 import { ResumeBuilderModule } from './modules/resume-builder/resume-builder.module';
 
@@ -19,6 +20,7 @@ import { ResumeBuilderModule } from './modules/resume-builder/resume-builder.mod
     ReactiveFormsModule,
     CoreModule,
     ResumeBuilderModule,
+    UserManagementModule,
     HttpClientModule
   ],
   providers: [],

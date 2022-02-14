@@ -21,6 +21,42 @@
       "name": ".NET"
     }
   ],
+  "client": [
+    {
+      "id": 1,
+      "name": "Apple"
+    },
+    {
+      "id": 2,
+      "name": "JBL"
+    },
+    {
+      "id": 3,
+      "name": "1Rivet"
+    }
+  ],
+  "office": [
+    {
+      "id": 1,
+      "name": "Office1"
+    },
+    {
+      "id": 2,
+      "name": "Office2"
+    },
+    {
+      "id": 3,
+      "name": "Office3"
+    },
+    {
+      "id": 4,
+      "name": "Office4"
+    },
+    {
+      "id": 5,
+      "name": "Office5"
+    }
+  ],
   "forms": [
     {
       "firstname": "Nirali",
@@ -156,6 +192,53 @@
         }
       ],
       "id": 1
+    }
+  ],
+  "users": [
+    {
+      "firstname": "Nirali",
+      "lastname": "Tandel",
+      "email": "niralitandel8909@gmail.com",
+      "contact": "8511007563",
+      "client": "1",
+      "office": "1",
+      "id": 1
+    },
+    {
+      "firstname": "Ayushi",
+      "lastname": "Parmar",
+      "email": "aayu@gmail.com",
+      "contact": "9624595320",
+      "client": "2",
+      "office": "2",
+      "id": 2
+    },
+    {
+      "firstname": "Mrunal",
+      "lastname": "Patel",
+      "email": "mitsu@gmail.com",
+      "contact": "6351489268",
+      "client": "3",
+      "office": "3",
+      "id": 3
+    },
+    {
+      "firstname": "Shreya",
+      "lastname": "Patel",
+      "email": "rishi@gmail.com",
+      "contact": "7567856757",
+      "client": "1",
+      "office": "3",
+      "id": 4
+    },
+    {
+      "firstname": "Shreya",
+      "lastname": "Patel",
+      "email": "rishi@gmail.com",
+      "contact": "7567856757",
+      "client": "2",
+      "office": "4",
+      "id": 5
     }
   ]
 }

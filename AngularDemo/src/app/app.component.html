@@ -1,10 +1,10 @@
 <section class="wrapper d-flex overflow-hidden">
-    <div class="sidebar">
-      <app-sidebar></app-sidebar>
+  <div class="sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
+  <div class="flex-grow-1 overflow-auto bg-color">
+    <div class="margin-10">
+      <router-outlet></router-outlet>
     </div>
-    <div class="flex-grow-1 overflow-auto bg-color">
-      <div class="margin-10">
-        <router-outlet></router-outlet>
-      </div>
-    </div>
+  </div>
 </section>

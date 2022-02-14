@@ -7,6 +7,7 @@ const routes: Routes = [
   {path:'directivesandpipes', loadChildren: () => import('./modules/directivesandpipes/directivesandpipes.module').then(m => m.DirectivesandpipesModule)},
   {path:'reactiveform', loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule)},
   {path:'resumebuilder', loadChildren: () => import('./modules/resume-builder/resume-builder.module').then(m => m.ResumeBuilderModule)},
+  {path:'user-management', loadChildren: () => import('./Assessment1/user-management/user-management.module').then(m => m.UserManagementModule)}
 ];
 
 @NgModule({
