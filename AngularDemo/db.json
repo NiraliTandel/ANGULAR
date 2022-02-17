@@ -59,16 +59,6 @@
   ],
   "forms": [
     {
-      "firstname": "Nirali",
-      "lastname": "Tandel",
-      "email": "niralitandel8909@gmail.com",
-      "phone": "+918511007563",
-      "date": "2022-02-15",
-      "gender": "Female",
-      "department": "1",
-      "id": 1
-    },
-    {
       "firstname": "Ayushi",
       "lastname": "Parmar",
       "email": "aayu@gmail.com",
@@ -109,7 +99,7 @@
       "id": 5
     },
     {
-      "firstname": "viral",
+      "firstname": "Viral",
       "lastname": "Patel",
       "email": "viral@gmail.com",
       "phone": "9898569857",
@@ -157,6 +147,16 @@
       "gender": "Male",
       "department": "3",
       "id": 10
+    },
+    {
+      "firstname": "Abhi",
+      "lastname": "Patel",
+      "email": "abhi@gmail.com",
+      "phone": "9757586767",
+      "date": "2022-02-09",
+      "gender": "Male",
+      "department": "3",
+      "id": 11
     }
   ],
   "resume": [
@@ -223,22 +223,22 @@
       "id": 3
     },
     {
-      "firstname": "Shreya",
-      "lastname": "Patel",
-      "email": "rishi@gmail.com",
-      "contact": "7567856757",
+      "firstname": "Sneha",
+      "lastname": "Mistry",
+      "email": "sneha@gmail.com",
+      "contact": "8787876876",
       "client": "1",
-      "office": "3",
-      "id": 4
+      "office": "2",
+      "id": 6
     },
     {
-      "firstname": "Shreya",
+      "firstname": "Chirag",
       "lastname": "Patel",
-      "email": "rishi@gmail.com",
-      "contact": "7567856757",
-      "client": "2",
-      "office": "4",
-      "id": 5
+      "email": "chirag@gmail.com",
+      "contact": "8679865975",
+      "client": "3",
+      "office": "3",
+      "id": 7
     }
   ]
 }

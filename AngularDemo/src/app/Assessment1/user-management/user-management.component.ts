@@ -6,9 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-management.component.css']
 })
 export class UserManagementComponent implements OnInit {
-
+  userbtn: boolean = false;
+  
   constructor() { }
 
   ngOnInit(): void { }
+
+  togglebtn() {
+    this.userbtn = !this.userbtn;
+  }
 
 }

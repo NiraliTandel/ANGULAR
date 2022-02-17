@@ -10,10 +10,10 @@
         placeholder="Search User"
     /></span>
     <span class="icon-search_icon padding-right position-absolute"></span>
-    <button type="button" class="add-btn" routerLink="/user-management/add">
+    <button type="button" class="add-btn" [disabled]="userbtn" (click)="togglebtn()" routerLink="/user-management/add">
       + NEW USER
     </button>
   </div>
 </header>
-<app-user-form></app-user-form>
+<app-user-form *ngIf="userbtn == true"></app-user-form>
 <app-user-list></app-user-list>

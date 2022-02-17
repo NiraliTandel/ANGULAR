@@ -1,9 +1,15 @@
+h1 {
+  padding-bottom: 20px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
 .container {
-  width: 500px;
+  width: 97%;
   padding: 2rem;
   margin: 0 auto;
-  line-height: 2.5rem;
   border-radius: 10px;
+  border: 2px solid #f8f8fa;
   background-color: white;
 }
 
@@ -21,7 +27,14 @@ label {
 }
 
 .text-box {
-  width: 50%;
+  width: 25%;
+  border-radius: 10px;
+  border: 2px solid #f8f8fa;
+  padding: 5px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
 }
 
 .submit-btn {

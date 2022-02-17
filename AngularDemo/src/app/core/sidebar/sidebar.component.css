@@ -16,6 +16,27 @@ aside {
   font-size: 2rem;
 }
 
+.image {
+  max-height: 50px;
+  min-width: 50px;
+  max-width: 50px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.small {
+  font-size: small;
+  color: #898989;
+}
+
+.user {
+  font-weight: bold;
+}
+
+.border-bottom {
+  border-bottom: 2px solid #f8f8fa; 
+}
+
 a {
   text-decoration: none;
 }
@@ -37,15 +58,19 @@ a:hover {
 }
 
 .padding-top {
-  padding-top: 40px;
+  padding-top: 30px;
 }
 
 .padding-bottom {
-  padding-bottom: 40px;
+  padding-bottom: 30px;
 }
 
 .padding-right {
   padding-right: 10px;
+}
+
+.padding-left {
+  padding-left: 10px;
 }
 
 nav {

@@ -7,7 +7,7 @@ import { UserManagementComponent } from './user-management.component';
 const routes: Routes = [
   { path: '', component: UserManagementComponent,
   children: [
-    { path: '', component: UserFormComponent },
+    { path: '', component: UserListComponent },
     { path: 'add', component: UserFormComponent },
     { path: 'cancel', component: UserListComponent },
     { path: 'edit/:id', component: UserFormComponent }
