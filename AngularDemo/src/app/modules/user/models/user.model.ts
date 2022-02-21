@@ -6,6 +6,7 @@ export interface User {
     gender:boolean;
     date:Date;
     department:number;
+    profileImg: string;
 }
 
 export interface Department {

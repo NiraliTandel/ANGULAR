@@ -59,6 +59,17 @@
   ],
   "forms": [
     {
+      "firstname": "Nirali",
+      "lastname": "Tandel",
+      "email": "nirali@gmail.com",
+      "phone": "8511007563",
+      "date": "2022-02-15",
+      "gender": "Female",
+      "department": "1",
+      "profileImg": "female-clipart.png",
+      "id": 1
+    },
+    {
       "firstname": "Ayushi",
       "lastname": "Parmar",
       "email": "aayu@gmail.com",
@@ -66,17 +77,8 @@
       "date": "2022-02-11",
       "gender": "Female",
       "department": "3",
+      "profileImg": "female-clipart.png",
       "id": 2
-    },
-    {
-      "firstname": "Mrunal",
-      "lastname": "Patel",
-      "email": "mitsu@gmail.com",
-      "phone": "6351489268",
-      "date": "2022-02-12",
-      "gender": "Male",
-      "department": "4",
-      "id": 3
     },
     {
       "firstname": "Shreya",
@@ -86,6 +88,7 @@
       "date": "2022-02-11",
       "gender": "Female",
       "department": "5",
+      "profileImg": "female-clipart.png",
       "id": 4
     },
     {
@@ -96,6 +99,7 @@
       "date": "2022-02-25",
       "gender": "Male",
       "department": "1",
+      "profileImg": "female-clipart.png",
       "id": 5
     },
     {
@@ -106,6 +110,7 @@
       "date": "2022-02-28",
       "gender": "Male",
       "department": "1",
+      "profileImg": "female-clipart.png",
       "id": 6
     },
     {
@@ -116,6 +121,7 @@
       "date": "2022-02-24",
       "gender": "Male",
       "department": "4",
+      "profileImg": "female-clipart.png",
       "id": 7
     },
     {
@@ -126,6 +132,7 @@
       "date": "2022-02-08",
       "gender": "Female",
       "department": "4",
+      "profileImg": "female-clipart.png",
       "id": 8
     },
     {
@@ -136,6 +143,7 @@
       "date": "2022-02-12",
       "gender": "Male",
       "department": "5",
+      "profileImg": "female-clipart.png",
       "id": 9
     },
     {
@@ -146,6 +154,7 @@
       "date": "2022-02-22",
       "gender": "Male",
       "department": "3",
+      "profileImg": "female-clipart.png",
       "id": 10
     },
     {
@@ -156,6 +165,7 @@
       "date": "2022-02-09",
       "gender": "Male",
       "department": "3",
+      "profileImg": "female-clipart.png",
       "id": 11
     }
   ],

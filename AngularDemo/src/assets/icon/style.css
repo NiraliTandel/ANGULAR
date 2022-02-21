@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icon';
-  src:  url('fonts/icon.eot?n3oxop');
-  src:  url('fonts/icon.eot?n3oxop#iefix') format('embedded-opentype'),
-    url('fonts/icon.ttf?n3oxop') format('truetype'),
-    url('fonts/icon.woff?n3oxop') format('woff'),
-    url('fonts/icon.svg?n3oxop#icon') format('svg');
+  src:  url('fonts/icon.eot?ykivq1');
+  src:  url('fonts/icon.eot?ykivq1#iefix') format('embedded-opentype'),
+    url('fonts/icon.ttf?ykivq1') format('truetype'),
+    url('fonts/icon.woff?ykivq1') format('woff'),
+    url('fonts/icon.svg?ykivq1#icon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -13,7 +13,6 @@
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icon' !important;
-  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -25,6 +24,9 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+.icon-menu_icon:before {
+  content: "\e908";
+}
 .icon-angular_icon:before {
   content: "\e901";
 }

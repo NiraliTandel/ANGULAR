@@ -1,16 +1,16 @@
 <h1>User List</h1>
 <header>
-  <div class="position-relative">
-    <span
-      ><input
+  <div class="flex-grow-1 position-relative">
+    <span>
+      <input
         type="search"
         class="search"
         name="search"
         id="search"
         placeholder="Search User"
-        [(ngModel)]="searchText"
-    /></span>
-    <span class="icon-search_icon padding-right position-absolute"></span>
+        [(ngModel)]="searchText" />
+    </span>
+    <span class="search-icon icon-search_icon padding-right position-absolute"></span>
   </div>
   <div>
     <button class="add-btn" routerLink="/reactiveform/add">+ Add User</button>
@@ -20,25 +20,61 @@
   <table>
     <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Email Address</th>
-        <th scope="col">Gender</th>
-        <th scope="col">Date Of Employeement</th>
-        <th scope="col">Department</th>
-        <th scope="col">Action</th>
+        <th scope="col" class="table-cell">
+          #
+        </th>
+        <th scope="col" class="table-cell">
+          Name
+        </th>
+        <th scope="col" class="table-cell">
+          Email Address
+        </th>
+        <th scope="col" class="table-cell">
+          Gender
+        </th>
+        <th scope="col" class="table-cell">
+          Date Of Employeement
+        </th>
+        <th scope="col" class="table-cell">
+          Department
+        </th>
+        <th scope="col" class="table-cell">
+          Action
+        </th>
       </tr>
     </thead>
     <tbody>
       <tr *ngFor="let user of userData | userFilter: searchText; let i = index">
-        <th scope="row">{{ i + 1 }}.</th>
-        <td>{{ user.firstname + " " + user.lastname }}</td>
-        <td>{{ user.email }}</td>
-        <td>{{ user.gender }}</td>
-        <td>{{ user.date | date: "MM/dd/yyyy" }}</td>
-        <td>{{ user.department | department: department }}</td>
-        <td>
-          <button class="edit-btn" routerLink="/reactiveform/edit/{{ user.id }}">Edit</button>
+        <th scope="row" class="table-cell">
+          {{ i + 1 }}.
+        </th>
+        <td class="table-cell">
+          <div class="d-flex align-item-center">
+            <figure class="profile-img d-flex align-item-center overflow-hidden">
+              <img src="./assets/images/{{user.profileImg}}" alt="" />
+            </figure>
+            {{ user.firstname + " " + user.lastname }}
+          </div>
+        </td>
+        <td class="table-cell">
+          {{ user.email }}
+        </td>
+        <td class="table-cell">
+          {{ user.gender }}
+        </td>
+        <td class="table-cell">
+          {{ user.date | date: "MM/dd/yyyy" }}
+        </td>
+        <td class="table-cell">
+          {{ user.department | department: department }}
+        </td>
+        <td class="table-cell">
+          <button
+            class="edit-btn"
+            routerLink="/reactiveform/edit/{{ user.id }}"
+          >
+            Edit
+          </button>
           <button class="delete-btn" (click)="deleteUser(user.id)">
             Delete
           </button>
