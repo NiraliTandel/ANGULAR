@@ -8,7 +8,7 @@ const routes: Routes = [
   {
     path: '', component: ResumeBuilderComponent,
     children: [
-      { path: '', redirectTo: 'resumeform', pathMatch: 'full' },
+      { path: '', component:ResumeFormComponent },
       { path: 'resumeform', component: ResumeFormComponent },
       { path: 'resumeview', component: ResumeViewComponent }
     ]

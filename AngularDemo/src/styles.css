@@ -13,11 +13,6 @@ body {
   overflow: hidden;
 }
 
-img {
-  width: 100%;
-  height: auto;
-}
-
 /* Flex */
 .d-flex {
   display: flex;
@@ -53,4 +48,10 @@ img {
 
 .overflow-auto {
   overflow: auto;
+}
+
+@media (max-width: 768px) {
+  .font-size {
+    font-size: 14px;
+  }
 }

@@ -99,7 +99,7 @@
       "date": "2022-02-25",
       "gender": "Male",
       "department": "1",
-      "profileImg": "female-clipart.png",
+      "profileImg": "male_clipart.png",
       "id": 5
     },
     {
@@ -110,7 +110,7 @@
       "date": "2022-02-28",
       "gender": "Male",
       "department": "1",
-      "profileImg": "female-clipart.png",
+      "profileImg": "male_clipart.png",
       "id": 6
     },
     {
@@ -121,7 +121,7 @@
       "date": "2022-02-24",
       "gender": "Male",
       "department": "4",
-      "profileImg": "female-clipart.png",
+      "profileImg": "male_clipart.png",
       "id": 7
     },
     {
@@ -143,18 +143,18 @@
       "date": "2022-02-12",
       "gender": "Male",
       "department": "5",
-      "profileImg": "female-clipart.png",
+      "profileImg": "male_clipart.png",
       "id": 9
     },
     {
-      "firstname": "Rishi",
+      "firstname": "Hrishi",
       "lastname": "Patel",
-      "email": "rishi@gmail.com",
+      "email": "hrishi@gmail.com",
       "phone": "7567856757",
       "date": "2022-02-22",
       "gender": "Male",
-      "department": "3",
-      "profileImg": "female-clipart.png",
+      "department": "1",
+      "profileImg": "male_clipart.png",
       "id": 10
     },
     {
@@ -165,7 +165,7 @@
       "date": "2022-02-09",
       "gender": "Male",
       "department": "3",
-      "profileImg": "female-clipart.png",
+      "profileImg": "male_clipart.png",
       "id": 11
     }
   ],

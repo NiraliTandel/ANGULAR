@@ -6,7 +6,7 @@ import { UserComponent } from './user.component';
 
 const routes: Routes = [
   {
-    path: '', component: UserComponent,
+    path: '',
     children: [
       { path: '', component: ListComponent },
       { path: 'add', component: FormComponent },

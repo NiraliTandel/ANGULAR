@@ -4,7 +4,7 @@ tr {
   border: 2px solid #f8f8fa;
   border-radius: 10px;
   padding: 5px;
-  margin: 20px;
+  margin: 0 auto;
   width: 97%;
   overflow: hidden;
   background-color: white;
@@ -17,6 +17,7 @@ td {
 }
 
 th {
+  font-weight: 400;
   color: #898989;
 }
 
@@ -31,8 +32,19 @@ header {
   justify-content: space-between;
   align-items: center;
   height: 70px;
-  padding-left: 20px;
-  padding-right: 20px;
+  padding-left: 25px;
+  padding-right: 40px;
+  margin: 0 0 25px;
+}
+
+.table {
+  height: 100%;
+  overflow: scroll;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 .padding-right {
@@ -59,18 +71,18 @@ header {
 
 .search {
   height: 40px;
-  width: 40%;
+  width: 20%;
   background-color: white;
   padding: 20px;
   padding-left: 35px;
   border: 2px solid #f8f8fa;
   border-radius: 10px;
   outline: none;
-  transition: all ease-in-out .25s;
+  transition: all ease-in-out 0.25s;
 }
 
 .search:focus {
-  width: 70%;
+  width: 40%;
 }
 
 .add-btn {
@@ -108,4 +120,43 @@ header {
 
 .table-cell {
   text-align: left;
+}
+
+.list-wrapper {
+  height: 100%;
+}
+
+@media (max-width: 768px) {
+  .list-wrapper {
+    width: 97%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  h1 {
+    padding-left: 10px;
+  }
+
+  header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .search {
+    width: 15%;
+  }
+
+  .search:focus {
+    width: 30%;
+  }
+
+  .add-btn {
+    width: 100px;
+  }
+
+  .profile-img {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+  }
 }
