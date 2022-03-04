@@ -1,7 +1,10 @@
+import { ConnectedPosition, FlexibleConnectedPositionStrategy, Overlay } from '@angular/cdk/overlay';
+import { ComponentPortal } from '@angular/cdk/portal';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Department, User } from '../../models/user.model';
 import { FormService } from '../../services/form.service';
+import { FormModelComponent } from '../form-model/form-model.component';
 
 @Component({
   selector: 'app-list',
@@ -14,7 +17,7 @@ export class ListComponent implements OnInit {
   searchText: string = "";
   department: Department[] = [];
 
-  constructor(private service: FormService, private router: Router) { }
+  constructor(private service: FormService, private router: Router, private overlay: Overlay) { }
 
   ngOnInit(): void {
     this.getUserData();
@@ -48,4 +51,13 @@ export class ListComponent implements OnInit {
     this.service.getDepartment().subscribe((data) => (this.department = data));
   }
 
+  openFormModel() {
+    const target = document.querySelector("#btn") as HTMLElement;
+    const overlayRef = this.overlay.create({
+      positionStrategy: this.overlay.position().global().right()
+    });
+    const component = new ComponentPortal(FormModelComponent);
+    const componentRef = overlayRef.attach(component);
+    componentRef.instance.cancel.subscribe(()=> overlayRef.detach());
+  }
 }

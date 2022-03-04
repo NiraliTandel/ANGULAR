@@ -22,9 +22,7 @@ th {
 }
 
 h1 {
-  padding-bottom: 20px;
-  padding-left: 20px;
-  padding-top: 20px;
+  padding: 20px 25px 20px 25px;
 }
 
 header {
@@ -123,11 +121,12 @@ img {
 }
 
 .list-wrapper {
-  height: 100%;
+  height: 90%;
 }
 
 @media (max-width: 768px) {
   .list-wrapper {
+    height: 90%;
     width: 97%;
     margin: 0 auto;
     overflow: hidden;

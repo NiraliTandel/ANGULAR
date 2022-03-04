@@ -17,10 +17,10 @@
       ></span>
     </div>
     <div>
-      <button class="add-btn" routerLink="/reactiveform/add">+ Add User</button>
+      <button class="add-btn" id="btn" (click)="openFormModel()">+ Add User</button>
     </div>
   </header>
-  <div class="table">
+  <div class="table" *ngIf="userData?.length">
     <table>
       <thead>
         <tr>
@@ -33,7 +33,7 @@
           <th scope="col" class="table-cell font-size">Action</th>
         </tr>
       </thead>
-      <tbody class="font-size" *ngIf="userData?.length">
+      <tbody class="font-size">
         <tr
           *ngFor="let user of userData | userFilter: searchText; let i = index"
         >
