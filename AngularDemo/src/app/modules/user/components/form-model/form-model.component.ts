@@ -1,6 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { Department } from '../../models/user.model';
+import { Department, User } from '../../models/user.model';
 import { FormService } from '../../services/form.service';
 
 @Component({
@@ -9,23 +9,34 @@ import { FormService } from '../../services/form.service';
   styleUrls: ['./form-model.component.css']
 })
 export class FormModelComponent implements OnInit {
-  submitted!: boolean;
-  departmentData: Department[] = [];
-  isAddMode?: boolean;
+  public modalTitle: string;
+  private isAddMode: boolean;
 
-  @Output() cancel;
+  @Input() public id: number = 0;
+  @Input() public editData: User;
+  @Input() public department: Department[];
 
-  constructor(
-    private fb: FormBuilder,
-    private service: FormService
-  ) {
+  @Output() public userData;
+  @Output() public cancel;
+
+  constructor(private fb: FormBuilder, private service: FormService) {
+    this.modalTitle = 'Add User';
+    this.editData = {} as User;
+    this.department = [];
+    this.isAddMode = true;
+
+    this.userData = new EventEmitter<User>();
     this.cancel = new EventEmitter<String>();
   }
 
   ngOnInit(): void {
-    console.log(this.myForm);
-
-    this.getDepartmentList();
+    if (this.id != 0) {
+      this.isAddMode = false;
+    }
+    if (!this.isAddMode) {
+      this.modalTitle = 'Edit User';
+      this.myForm.patchValue(this.editData);
+    }
   }
 
   myForm = this.fb.group({
@@ -42,31 +53,8 @@ export class FormModelComponent implements OnInit {
     return this.myForm['controls'];
   }
 
-  getDepartmentList() {
-    this.service.getDepartment().subscribe(
-      (result: Department[]) => {
-        this.departmentData = result;
-      },
-      (error) => {
-        alert('Something went wrong');
-      }
-    );
-  }
-
-  OnSubmit() {
-    if (this.isAddMode) {
-      this.saveData()
-    }
-  }
-
-  saveData() {
-    console.log(this.myForm);
-    this.service.createUser(this.myForm.value).subscribe(
-      (result) => {
-        alert("Data saved successfully")
-      }, (error) => {
-        alert("Somthing went wrong")
-      })
+  onSubmit() {
+    this.userData.emit(this.myForm.value)
   }
 
   resetForm() {

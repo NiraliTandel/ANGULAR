@@ -1,9 +1,9 @@
 <div class="model-wrapper">
   <div class="model-head">
-    <h2>+ Add User</h2>
+    <h2>{{ modalTitle }}</h2>
   </div>
   <div class="model-body">
-    <form [formGroup]="myForm" (ngSubmit)="OnSubmit()">
+    <form [formGroup]="myForm">
       <div class="margin-bottom-20">
         <label for="firstname">First Name:</label><br />
         <input type="text" id="firstname" name="firstname" formControlName="firstname" placeholder="Enter First Name"
@@ -92,14 +92,14 @@
       <div class="margin-bottom-20">
         <label for="department">Department:</label><br />
         <select name="department" id="department" formControlName="department" class="text-box">
-          <option *ngFor="let department of departmentData" [value]="department.id">
+          <option *ngFor="let department of department" [value]="department.id">
             {{ department.name }}
           </option>
         </select>
       </div>
       <div class="d-flex space-between">
         <div>
-          <button class="submit-btn" type="submit" [disabled]="myForm.invalid" routerLink="submit">
+          <button class="submit-btn" type="submit" [disabled]="myForm.invalid" (click)="onSubmit()">
             Submit
           </button>
           <button class="reset-btn" type="button" (click)="resetForm()">

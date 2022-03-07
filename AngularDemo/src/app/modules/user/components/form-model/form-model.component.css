@@ -11,14 +11,11 @@
 }
 
 .model-body {
-  width: 97%;
-  height: auto;
   padding: 2rem;
   margin: 0 auto;
   border-radius: 10px;
   border: 2px solid #f8f8fa;
   background-color: white;
-  overflow: scroll;
 }
 
 .padding-right {

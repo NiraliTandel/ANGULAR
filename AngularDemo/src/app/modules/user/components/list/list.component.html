@@ -3,18 +3,10 @@
   <header>
     <div class="flex-grow-1 position-relative">
       <span>
-        <input
-          type="search"
-          class="search"
-          name="search"
-          id="search"
-          placeholder="Search User"
-          [(ngModel)]="searchText"
-        />
+        <input type="search" class="search" name="search" id="search" placeholder="Search User"
+          [(ngModel)]="searchText" />
       </span>
-      <span
-        class="search-icon icon-search_icon padding-right position-absolute"
-      ></span>
+      <span class="search-icon icon-search_icon padding-right position-absolute"></span>
     </div>
     <div>
       <button class="add-btn" id="btn" (click)="openFormModel()">+ Add User</button>
@@ -34,15 +26,11 @@
         </tr>
       </thead>
       <tbody class="font-size">
-        <tr
-          *ngFor="let user of userData | userFilter: searchText; let i = index"
-        >
+        <tr *ngFor="let user of userData | userFilter: searchText; let i = index">
           <th scope="row" class="table-cell">{{ i + 1 }}.</th>
           <td class="table-cell">
             <div class="d-flex align-item-center">
-              <figure
-                class="profile-img d-flex align-item-center overflow-hidden"
-              >
+              <figure class="profile-img d-flex align-item-center overflow-hidden">
                 <img src="./assets/images/{{ user.profileImg }}" alt="" />
               </figure>
               {{ user.firstname + " " + user.lastname }}
@@ -58,16 +46,13 @@
             {{ user.date | date: "MM/dd/yyyy" }}
           </td>
           <td class="table-cell">
-            {{ user.department | department: department }}
+            {{ user.department | department: departmentData }}
           </td>
           <td class="table-cell">
-            <button
-              class="edit-btn"
-              routerLink="/reactiveform/edit/{{ user.id }}"
-            >
+            <button class="edit-btn" (click)="editUser(user.id)">
               Edit
             </button>
-            <button class="delete-btn" (click)="deleteUser(user.id)">
+            <button class="delete-btn" (click)="deletePopUp(user.id)">
               Delete
             </button>
           </td>
