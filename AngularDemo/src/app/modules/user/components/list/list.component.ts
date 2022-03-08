@@ -108,6 +108,7 @@ export class ListComponent implements OnInit {
 
   openFormModel(id?: number) {
     let config = new OverlayConfig();
+    config.hasBackdrop = true;
     config.positionStrategy = this.overlay.position().global().right();
 
     const overlayRef = this.overlay.create(config);
