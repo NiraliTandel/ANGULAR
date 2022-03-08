@@ -1,6 +1,4 @@
-import { Template } from '@angular/compiler/src/render3/r3_ast';
 import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
-import { Intern } from './intern';
 
 @Component({
   selector: 'app-ngtemplateoutlet',
@@ -8,44 +6,40 @@ import { Intern } from './intern';
   styleUrls: ['./ngtemplateoutlet.component.css']
 })
 export class NgtemplateoutletComponent implements OnInit {
-  interns: Intern[] = [
+  constructor() { }
+
+  ngOnInit(): void { }
+
+  title = 'ngTemplateOutlet Example';
+
+  @ViewChild('cardTemplate', { static: true }) cardTemplate: TemplateRef<HTMLElement>;
+  @ViewChild('listTemplate', { static: true }) listTemplate: TemplateRef<HTMLElement>;
+
+  mode = "card"
+
+  items = [
     {
-      id: 1,
-      name: "Nirali",
-      company: "1Rivet"
+      header: 'Angular Tutorial',
+      content: 'The Angular Tutorial for Beginners & Professionals'
     },
     {
-      id: 2,
-      name: "Ayushi",
-      company: "1Rivet"
+      header: 'Typescript Tutorial',
+      content: 'The Complete Guide to Typescript'
     },
     {
-      id: 3,
-      name: "Shreya",
-      company: "1Rivet"
+      header: 'Entity Framework Code Tutorial',
+      content: 'Learn Everything about Entity Framework Core'
     },
   ];
 
-  @ViewChild('listView', {static: true}) list_view: TemplateRef<Template>;
-  @ViewChild('cardView', {static: true}) card_view: TemplateRef<Template>;
+  modeOptions = [
+    { mode: "card" },
+    { mode: "list" },
+  ];
 
-  viewMode: TemplateRef<Template>;
-  view_mode: string;
+  get template() {
 
-  constructor() { }
-
-  ngOnInit(): void {
-    this.viewMode = this.list_view;
-    this.view_mode = 'Show Card View';
-  }
-
-  toggleView(): void {
-    if (this.view_mode === 'Show Card View') {
-      this.view_mode = 'Show List View';
-      this.viewMode = this.card_view;
-    } else {
-      this.view_mode = 'Show Card View';
-      this.viewMode = this.list_view;
-    }
+    if (this.mode == "list") return this.listTemplate
+    return this.cardTemplate
   }
 }

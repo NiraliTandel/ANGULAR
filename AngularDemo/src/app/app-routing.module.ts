@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'reactiveform', loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule) },
   { path: 'resumebuilder', loadChildren: () => import('./modules/resume-builder/resume-builder.module').then(m => m.ResumeBuilderModule) },
   { path: 'user-management', loadChildren: () => import('./Assessment1/user-management/user-management.module').then(m => m.UserManagementModule) },
-  { path: 'todo', loadChildren: () => import('./modules/todo/todo.module').then(m => m.TodoModule) },
+  { path: 'ngtemplateoutlet', loadChildren: () => import('./modules/ngtemplateoutlet/ngtemplateoutlet.module').then(m => m.NgtemplateoutletModule) },
 ];
 
 @NgModule({

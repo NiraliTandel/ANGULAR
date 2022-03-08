@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { NgtemplateoutletRoutingModule } from './ngtemplateoutlet-routing.module';
 import { NgtemplateoutletComponent } from './ngtemplateoutlet.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { NgtemplateoutletComponent } from './ngtemplateoutlet.component';
   ],
   imports: [
     CommonModule,
-    NgtemplateoutletRoutingModule
+    NgtemplateoutletRoutingModule,
+    FormsModule
   ]
 })
 export class NgtemplateoutletModule { }

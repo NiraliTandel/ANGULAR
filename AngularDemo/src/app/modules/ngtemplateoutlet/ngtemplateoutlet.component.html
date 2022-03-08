@@ -1,32 +1,27 @@
-<ng-template #listView>
-  <ul class="list">
-    <li class="list-item" *ngFor="let intern of interns">
-      ID: {{ intern.id }}, Name: {{ intern.name }}, Company: {{ intern.company }}
-    </li>
-  </ul>
-</ng-template>
-<ng-template #cardView>
-  <div class="card-row d-flex flex-wrap">
-    <div class="card-wrapper" *ngFor="let intern of interns">
-      <div class="card">
-        <div class="title">
-          ID: {{ intern.id }}
-        </div>
-        <div class="name">
-          Name: {{ intern.name }}
-        </div>
-        <div class="grade">
-          Company: {{ intern.company }}
-        </div>
-      </div>
+<div class="wrapper">
+  <h1 class="title">ngTemplateOutlet Demo</h1>
+
+  <label for="mode">Display Mode:</label>
+  <select [(ngModel)]="mode" class="mode">
+    <option *ngFor="let item of modeOptions" [ngValue]="item.mode">{{item.mode}}</option>
+  </select>
+
+  <ng-template let-items #cardTemplate>
+    <div class="card" *ngFor="let item of items">
+      <h1 class="card-title">{{item.header}}</h1>
+      <p class="card-text">{{item.content}}</p>
     </div>
-  </div>
-</ng-template>
+  </ng-template>
 
-<div class="template-ref-example">
-  <div class="tool-tip text-right">
-    <button class="btn btn-primary" type="button" (click)="toggleView()">{{ this.view_mode }}</button>
-  </div>
+  <ng-template let-items #listTemplate>
+    <ul class="list-view">
+      <li class="list-item" *ngFor="let item of items">
+        <strong>{{item.header}} </strong> ( {{item.content}} )
+      </li>
+    </ul>
+  </ng-template>
 
-  <ng-container [ngTemplateOutlet]="viewMode"></ng-container>
+  <ng-container [ngTemplateOutlet]="template" [ngTemplateOutletContext]="{$implicit:items}">
+  </ng-container>
+
 </div>
