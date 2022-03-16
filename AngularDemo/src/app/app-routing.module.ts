@@ -10,6 +10,7 @@ const routes: Routes = [
   { path: 'resumebuilder', loadChildren: () => import('./modules/resume-builder/resume-builder.module').then(m => m.ResumeBuilderModule) },
   { path: 'user-management', loadChildren: () => import('./Assessment1/user-management/user-management.module').then(m => m.UserManagementModule) },
   { path: 'ngtemplateoutlet', loadChildren: () => import('./modules/ngtemplateoutlet/ngtemplateoutlet.module').then(m => m.NgtemplateoutletModule) },
+  { path: 'mentor', loadChildren: () => import('./modules/mentor/mentor.module').then(m => m.MentorModule) }
 ];
 
 @NgModule({

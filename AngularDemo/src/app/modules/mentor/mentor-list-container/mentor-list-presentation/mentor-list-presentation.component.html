@@ -1,0 +1,36 @@
+<div class="list-wrapper d-flex flex-column">
+  <h1>User List</h1>
+  <div class="d-flex space-between">
+    <button class="add-btn" routerLink="../add">+ Add</button>
+  </div>
+  <div class="table" *ngIf="mentorList?.length">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col" class="table-cell">User Id</th>
+          <th scope="col" class="table-cell">Name</th>
+          <th scope="col" class="table-cell">Age</th>
+          <th scope="col" class="table-cell">Gender</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="align-middle" *ngFor="let mentor of mentorList">
+          <td class="table-cell">{{ mentor.id }}</td>
+          <td class="table-cell">{{ mentor.name }}</td>
+          <td class="table-cell">{{ mentor.age }}</td>
+          <td class="table-cell">{{ mentor.gender }}</td>
+          <td class="d-flex justify-center">
+            <button class="edit-btn" (click)="onEdit(mentor.id)">
+              Edit
+            </button>
+            <button class="delete-btn" (click)="onDelete(mentor.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!mentorList?.length">No data found...</div>
+</div>
