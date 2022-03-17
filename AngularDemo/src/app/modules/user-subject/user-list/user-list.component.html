@@ -1,0 +1,32 @@
+<div class="list-wrapper d-flex flex-column">
+  <div class="table">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col" class="table-cell">User Id</th>
+          <th scope="col" class="table-cell">Name</th>
+          <th scope="col" class="table-cell">Age</th>
+          <th scope="col" class="table-cell">Gender</th>
+          <th scope="col">Actions</th>
+        </tr>
+      </thead>
+      <tbody *ngIf="users?.length">
+        <tr class="align-middle" *ngFor="let user of this.users; let i = index; trackBy:detailTrack">
+          <td class="table-cell">{{ user.id }}</td>
+          <td class="table-cell">{{ user.name }}</td>
+          <td class="table-cell">{{ user.age }}</td>
+          <td class="table-cell">{{ user.gender }}</td>
+          <td class="d-flex justify-center">
+            <button class="edit-btn" (click)="editUser(user)">
+              Edit
+            </button>
+            <button class="delete-btn" (click)="deleteUser(user.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+      <div *ngIf="!users?.length">No data found...</div>
+    </table>
+  </div>
+</div>

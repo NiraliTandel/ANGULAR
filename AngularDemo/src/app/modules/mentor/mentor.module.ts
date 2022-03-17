@@ -9,7 +9,8 @@ import { MentorFormPresentationComponent } from './mentor-form-container/mentor-
 import { MentorListPresentationComponent } from './mentor-list-container/mentor-list-presentation/mentor-list-presentation.component';
 import { MentorService } from './mentor.service';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({
@@ -18,13 +19,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     MentorFormContainerComponent,
     MentorListContainerComponent,
     MentorFormPresentationComponent,
-    MentorListPresentationComponent
+    MentorListPresentationComponent,
+    SearchPipe
   ],
   imports: [
     CommonModule,
     MentorRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [
     MentorService

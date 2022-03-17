@@ -1,8 +1,17 @@
 <div class="list-wrapper d-flex flex-column">
   <h1>User List</h1>
-  <div class="d-flex space-between">
-    <button class="add-btn" routerLink="../add">+ Add</button>
-  </div>
+  <header>
+    <div class="flex-grow-1 position-relative">
+      <span>
+        <input type="search" class="search" name="search" id="search" placeholder="Search User"
+          [(ngModel)]="searchText" />
+      </span>
+      <span class="search-icon icon-search_icon padding-right position-absolute"></span>
+    </div>
+    <div class="d-flex space-between">
+      <button class="add-btn" routerLink="../add">+ Add</button>
+    </div>
+  </header>
   <div class="table" *ngIf="mentorList?.length">
     <table>
       <thead>
@@ -15,7 +24,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="align-middle" *ngFor="let mentor of mentorList">
+        <tr class="align-middle" *ngFor="let mentor of mentorList | search: searchText; let i = index">
           <td class="table-cell">{{ mentor.id }}</td>
           <td class="table-cell">{{ mentor.name }}</td>
           <td class="table-cell">{{ mentor.age }}</td>

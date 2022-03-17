@@ -17,19 +17,21 @@ export class MentorListPresentationComponent implements OnInit {
       this._mentorList = value;
     }
   }
-  public get mentorList() : Mentor[] | null {
+  public get mentorList() : Mentor[] {
     return this._mentorList;
   }
 
   @Output() public delete: EventEmitter<number>;
 
   private _mentorList!: Mentor[];
+  searchText: string = "";
 
   constructor(
     private mentorListPresenter: MentorListPresenterService,
     private router: Router
   ) {
     this.delete = new EventEmitter();
+    this.searchText = '';
    }
 
   ngOnInit(): void {
