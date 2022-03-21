@@ -11,7 +11,7 @@
         </tr>
       </thead>
       <tbody *ngIf="users?.length">
-        <tr class="align-middle" *ngFor="let user of this.users; let i = index; trackBy:detailTrack">
+        <tr class="align-middle" *ngFor="let user of this.users; let i = index">
           <td class="table-cell">{{ user.id }}</td>
           <td class="table-cell">{{ user.name }}</td>
           <td class="table-cell">{{ user.age }}</td>

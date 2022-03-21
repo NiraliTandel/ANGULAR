@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
 import { Users } from '../user.model';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-list',
@@ -11,31 +10,53 @@ import { UserService } from '../user.service';
 export class UserListComponent implements OnInit {
 
   users: Users[];
-  genderOptions: string[];
 
-  constructor(
-    private router: Router,
-    private userService: UserService
-  ) {
-    this.users = new Array<Users>();
-    this.genderOptions = new Array<string>();
+  constructor(private userService: UserService) {
+
+    
+    this.users = [
+      new Users(
+        1,
+        "Nirali",
+        21,
+        "Female"
+      )
+    ];
   }
 
   ngOnInit(): void {
-    this.users = this.userService.getUser();
-    this.genderOptions = this.userService.getGenderOptions();
+    this.userService.saveUser$.subscribe((data) => {
+      if (data.id) {
+        this.users[this.users.findIndex((user: Users) => user.id === data.id)] = data;
+      } else {
+        this.addUser(data);
+      }
+    });
   }
 
   editUser(data: Users): void {
     this.userService.sendDataToEdit(data);
   }
 
-  deleteUser(id: number) {
-    this.userService.deleteUser(id);
+  getUserById(id: number): Users | undefined {
+    return this.users.find((val) => id == val.id);
   }
 
-  detailTrack(index: number, detail: Users) {
-    return detail.id;
+  addUser(newUsers: Users): void {
+    if (this.users.length) {
+      newUsers.id = this.users.slice(-1)[0].id + 1;
+    } else {
+      newUsers.id = 1;
+    }
+    console.log(this.users);
+    this.users.push(newUsers);
   }
 
+  updateUser(id: number, data: Users): void {
+    this.users[this.users.findIndex((val) => id == val.id)] = { ...data, id: id };
+  }
+
+  deleteUser(id: number): Users[] {
+    return this.users.splice(this.users.findIndex((val) => id == val.id), 1);
+  }
 }

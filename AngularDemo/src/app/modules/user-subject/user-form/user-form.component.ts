@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Users } from '../user.model';
-import { UserService } from '../user.service';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-user-form',
@@ -12,14 +11,12 @@ import { UserService } from '../user.service';
 export class UserFormComponent implements OnInit {
 
   myForm: FormGroup;
-  userToEdit!: Users;
+  oldUser!: Users;
   isEditMode: boolean = false;
   submitted: boolean = false;
 
   constructor(
     private fb: FormBuilder,
-    private router: Router,
-    private activeRoute: ActivatedRoute,
     private userService: UserService
   ) {
     this.myForm = this.buildForm();
@@ -28,8 +25,8 @@ export class UserFormComponent implements OnInit {
   ngOnInit(): void {
     this.userService.editUser$.subscribe((data) => {
       this.isEditMode = true;
-      this.userToEdit = data;
-      this.myForm.patchValue(this.userToEdit);
+      this.oldUser = data;
+      this.myForm.patchValue(this.oldUser);
       console.log("EDIT MODE");
     });
   }
@@ -38,7 +35,7 @@ export class UserFormComponent implements OnInit {
     return this.fb.group({
       name: [null, Validators.required],
       age: [null, Validators.required],
-      gender: ['0']
+      gender: ['1']
     });
   }
 
@@ -50,25 +47,19 @@ export class UserFormComponent implements OnInit {
     this.submitted = true;
     console.log(this.myForm);
     if (this.myForm.status === 'VALID') {
+      console.log(this.myForm);
       this.saveUser();
     }
   }
 
   saveUser() {
+    let data = this.myForm.value;
     if (this.isEditMode) {
-      if (this.userService.updateUser(this.userToEdit.id, this.myForm.value)) {
-        this.onReset();
-      } else {
-        alert('Error occured while saving...');
-      }
-    } else {
-      if (this.userService.addUser(this.myForm.value)) {
-        this.onReset();
-      } else {
-        alert('Error occured while saving...');
-      }
-    }
-    console.log(this.myForm.value);
+      data.id = this.oldUser.id;
+    } 
+    this.userService.sendDataToSave(data);
+    this.onReset();
+    this.isEditMode = false;
   }
 
   onReset() {

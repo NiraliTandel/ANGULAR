@@ -2,10 +2,6 @@ header {
   margin: 40px 40px 0 40px;
 }
 
-/* h1 {
-  padding-bottom: 40px;
-} */
-
 .position-relative {
   position: relative;
 }
@@ -26,7 +22,7 @@ header {
 
 .search {
   height: 40px;
-  width: 20%;
+  width: 25%;
   background-color: white;
   padding: 20px;
   padding-left: 35px;
@@ -37,7 +33,7 @@ header {
 }
 
 .search:focus {
-  width: 30%;
+  width: 40%;
 }
 
 .add-btn {
