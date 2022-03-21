@@ -13,7 +13,6 @@ export class UserListComponent implements OnInit {
 
   constructor(private userService: UserService) {
 
-    
     this.users = [
       new Users(
         1,

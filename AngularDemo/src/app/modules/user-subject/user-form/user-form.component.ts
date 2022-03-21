@@ -56,7 +56,7 @@ export class UserFormComponent implements OnInit {
     let data = this.myForm.value;
     if (this.isEditMode) {
       data.id = this.oldUser.id;
-    } 
+    }
     this.userService.sendDataToSave(data);
     this.onReset();
     this.isEditMode = false;
