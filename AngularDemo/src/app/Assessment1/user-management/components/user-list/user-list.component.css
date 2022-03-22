@@ -1,12 +1,16 @@
 /* Table */
+.container {
+  display: flex;
+  justify-content: center;
+}
+
 table,
 tr {
   border-collapse: collapse;
   border: 1px solid #e6e7eb;
   border-radius: 10px;
-  padding: 5px;
-  margin: 20px;
-  width: 97%;
+  width: 98%;
+  margin: auto 20px;
   overflow: hidden;
   background-color: white;
 }

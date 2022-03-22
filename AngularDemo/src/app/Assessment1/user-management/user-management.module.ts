@@ -10,6 +10,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { UserService } from './services/user.service';
 import { ClientPipe } from './pipes/client.pipe';
 import { OfficePipe } from './pipes/office.pipe';
+import { SearchPipe } from './pipes/search.pipe';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { OfficePipe } from './pipes/office.pipe';
     UserFormComponent,
     UserListComponent,
     ClientPipe,
-    OfficePipe
+    OfficePipe,
+    SearchPipe
   ],
   imports: [
     CommonModule,

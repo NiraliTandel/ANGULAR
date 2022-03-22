@@ -1,4 +1,4 @@
-<div *ngIf="userData?.length">
+<div class="container" *ngIf="userData?.length">
   <!-- Start: Table -->
   <table>
     <thead>
@@ -14,7 +14,7 @@
       </tr>
     </thead>
     <tbody>
-      <tr *ngFor="let user of userData; let i = index">
+      <tr *ngFor="let user of userData | search: searchText; let i = index">
         <th scope="row">{{ i + 1 }}.</th>
         <td>{{ user.firstname }}</td>
         <td>{{ user.lastname }}</td>
@@ -23,7 +23,7 @@
         <td>{{ user.office | office: office }}</td>
         <td>{{ user.contact }}</td>
         <td>
-          <button class="edit-btn" routerLink="edit/{{ user.id }}">EDIT</button>
+          <button class="edit-btn" (click)="editUser(user.id)">EDIT</button>
           <button class="delete-btn" (click)="deleteUser(user.id)">
             DELETE
           </button>

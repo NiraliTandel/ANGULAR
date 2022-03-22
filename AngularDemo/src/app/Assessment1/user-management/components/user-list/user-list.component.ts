@@ -1,5 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Client, Office, User } from '../../models/user-management.model';
 import { UserService } from '../../services/user.service';
 
@@ -9,47 +8,42 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./user-list.component.css']
 })
 export class UserListComponent implements OnInit {
-  userData: User[] = [];
-  client: Client[] = [];
-  office: Office[] = [];
-  
-  constructor(private service: UserService, private router: Router) { }
+  @Input() userData: User[];
+  @Input() client: Client[];
+  @Input() office: Office[];
 
-  ngOnInit(): void {
-    this.getUserData();
-    this.getClient();
-    this.getOffice();
+  @Output() editId: EventEmitter<number>;
+  @Output() deleteId: EventEmitter<number>;
+  searchText: string = '';
+  showForm: boolean = false;
+  buttonDisabled: boolean = false;
+
+  constructor(private service: UserService) {
+    this.editId = new EventEmitter<number>();
+    this.deleteId = new EventEmitter<number>();
   }
 
-  getClient() {
+  ngOnInit(): void { }
+
+  public editUser(id: number) {
+    this.editId.emit(id);
+  }
+
+  public deleteUser(id: number) {
+    this.deleteId.emit(id);
+  }
+
+  toggleForm() {
+    this.showForm = !this.showForm;
+    this.buttonDisabled = false;
+  }
+
+  getclient() {
     this.service.getClient().subscribe((data) => (this.client = data));
   }
 
-  getOffice() {
+  getoffice() {
     this.service.getOffice().subscribe((data) => (this.office = data));
-  }
-
-  getUserData() {
-    this.service.getUserList().subscribe(
-      (result) => {
-        this.userData = result;
-      },
-      (error) => {
-        console.log('Something went wrong');
-      }
-    );
-  }
-
-  deleteUser(id: number) {
-    this.service.deleteUser(id).subscribe(
-      () => {
-        alert(id + ' is Deleted');
-        this.getUserData();
-      },
-      (error) => {
-        alert('Something went wrong');
-      }
-    );
   }
 
 }

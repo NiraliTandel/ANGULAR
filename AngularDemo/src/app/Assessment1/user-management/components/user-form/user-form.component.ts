@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { Component, EventEmitter, Input, OnInit, Output, SimpleChanges } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Client, Office } from '../../models/user-management.model';
+import { User, Client, Office } from '../../models/user-management.model';
 import { UserService } from '../../services/user.service';
 
 @Component({
@@ -10,104 +10,78 @@ import { UserService } from '../../services/user.service';
   styleUrls: ['./user-form.component.css']
 })
 export class UserFormComponent implements OnInit {
-  submitted!: boolean;
+  myForm: FormGroup;
+  userData: User[];
+  searchText: string;
+  sortclient: number;
   id!: number;
   isAddMode?: boolean;
-  clientData: Client[] = [];
-  officeData: Office[] = [];
+  showForm: boolean = false;
+  submitted: boolean = false;
+
+  @Input() clientData: Client[];
+  @Input() officeData: Office[];
+  @Input() edit: User;
+
+  @Output() saveData: EventEmitter<User>;
+  @Output() updateUser: EventEmitter<User>;
 
   constructor(
     private fb: FormBuilder,
     private service: UserService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {
+    this.saveData = new EventEmitter<User>()
+    this.updateUser = new EventEmitter<User>();
+  }
 
   ngOnInit(): void {
+    this.buildForm();
+
     this.id = this.route.snapshot.params['id'];
     this.isAddMode = !this.id;
     console.log(this.myForm);
-
-    this.getbyId();
-    this.getClientList();
-    this.getOfficeList();
   }
 
-  myForm = this.fb.group({
-    firstname: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(7)]],
-    lastname: ['', Validators.required],
-    email: ['', [Validators.required, Validators.email]],
-    contact: ['', [Validators.required, Validators.maxLength(10)]],
-    client: [''],
-    office: ['']
-  });
+  ngOnChanges(changes: SimpleChanges): void {
+    this.buildForm();
+  }
+
+  public buildForm() {
+    this.myForm = this.fb.group({
+      id:[],
+      firstname: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(7)]],
+      lastname: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      contact: ['', [Validators.required, Validators.maxLength(10)]],
+      client: [''],
+      office: ['']
+    });
+    this.editUserForm();
+  }
 
   get getvalue() {
     return this.myForm['controls'];
   }
 
-  getClientList() {
-    this.service.getClient().subscribe(
-      (result: Client[]) => {
-        this.clientData = result;
-      },
-      (error) => {
-        alert('Something went wrong');
-      }
-    );
-  }
-
-  getOfficeList() {
-    this.service.getOffice().subscribe(
-      (result: Office[]) => {
-        this.officeData = result;
-      },
-      (error) => {
-        alert('Something went wrong');
-      }
-    );
-  }
-
-  OnSubmit() {
-    if (this.isAddMode) {
-      this.saveData()
-    } else {
-      this.updateData()
+  public editUserForm() {
+    if (this.edit?.id) {
+      this.toggleForm();
+      this.myForm.patchValue(this.edit);
     }
   }
 
-  saveData() {
-    console.log(this.myForm);
-    this.service.createUser(this.myForm.value).subscribe(
-      (result) => {
-        alert("Data saved successfully")
-      }, (error) => {
-        alert("Somthing went wrong")
-      })
-
-    this.router.navigate(['user-management'])
+  toggleForm() {
+    this.showForm = !this.showForm;
   }
 
-  getbyId() {
-    if (!this.isAddMode) {
-      this.service.getById(this.id).subscribe((x) => this.myForm.patchValue(x));
+  onSubmit() {
+    this.submitted = true;
+    if (this.myForm.valid) {
+      this.saveData.emit(this.myForm.value);
     }
-  }
-
-  updateData() {
-    console.log(this.myForm);
-    this.service.updateUser(this.id, this.myForm.value).subscribe(
-      (result) => {
-        alert("Data updated successfully")
-      }, (error) => {
-        alert("Somthing went wrong")
-      })
-
-    this.router.navigate(['user-management'])
-  }
-
-  resetForm() {
     this.myForm.reset();
+    this.toggleForm();
   }
-
 }
