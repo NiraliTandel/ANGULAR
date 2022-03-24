@@ -49,6 +49,7 @@ label {
   padding: 5px;
   border-radius: 5px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .reset-btn {
@@ -57,6 +58,7 @@ label {
   border: none;
   padding: 5px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .cancel-btn {
@@ -66,6 +68,7 @@ label {
   padding: 5px;
   border-radius: 5px;
   margin-left: 100px;
+  cursor: pointer;
 }
 
 @media (max-width: 768px) {

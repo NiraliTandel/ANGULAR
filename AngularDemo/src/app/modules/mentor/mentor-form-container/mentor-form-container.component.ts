@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { Mentor, MentorForm } from '../mentor.model';
+import { Department, Mentor, MentorForm, Office } from '../mentor.model';
 import { MentorService } from '../mentor.service';
 
 @Component({
@@ -12,6 +12,8 @@ import { MentorService } from '../mentor.service';
 export class MentorFormContainerComponent implements OnInit {
   public id!: string;
   public mentorData$: Observable<Mentor>
+  public departmentList$: Observable<Department[]>;
+  public officeList$: Observable<Office[]>;
 
   constructor(
     private mentorService: MentorService,
@@ -19,6 +21,8 @@ export class MentorFormContainerComponent implements OnInit {
     private activatedRoute: ActivatedRoute
   ) {
     this.mentorData$ = new Observable();
+    this.departmentList$ = new Observable();
+    this.officeList$ = new Observable();
     console.log(this.activatedRoute)
     this.id = this.activatedRoute.snapshot.params['id'];
     console.log(this.id)
@@ -29,6 +33,16 @@ export class MentorFormContainerComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    this.getDepartment();
+    this.getOffice();
+  }
+
+  getDepartment(){
+    this.departmentList$=this.mentorService.getDepartment();
+  }
+
+  getOffice(){
+    this.officeList$=this.mentorService.getOffice();
   }
 
   addUser(mentorForm: MentorForm) {

@@ -1,5 +1,7 @@
 <app-mentor-form-presentation 
 [mentorData]="mentorData$ | async" 
+[departmentList]="departmentList$ | async"
+[officeList]="officeList$ | async"
 (add)="addUser($event)" 
 (edit)="editUser($event)"
 ></app-mentor-form-presentation>

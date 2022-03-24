@@ -6,10 +6,11 @@
         <input type="search" class="search" name="search" id="search" placeholder="Search Mentor"
           [(ngModel)]="searchText" />
       </span>
-      <span class="search-icon icon-search_icon padding-right position-absolute"></span>
+      <label for="search" class="search-icon icon-search_icon padding-right position-absolute"></label>
     </div>
     <div class="d-flex space-between">
       <button class="add-btn" routerLink="../add">+ Add</button>
+      <button class="filter-btn" (click)="openFilterModel()">Filter</button>
     </div>
   </header>
   <div class="table" *ngIf="mentorList?.length">
@@ -17,7 +18,13 @@
       <thead>
         <tr>
           <th scope="col" class="table-cell">Mentor Id</th>
-          <th scope="col" class="table-cell">Name</th>
+          <th scope="col" class="table-cell">First Name</th>
+          <th scope="col" class="table-cell">Last Name</th>
+          <th scope="col" class="table-cell">Email Address</th>
+          <th scope="col" class="table-cell">Contact Number</th>
+          <th scope="col" class="table-cell">Department</th>
+          <th scope="col" class="table-cell">Office</th>
+          <th scope="col" class="table-cell">Date Of Employeement</th>
           <th scope="col" class="table-cell">Age</th>
           <th scope="col" class="table-cell">Gender</th>
           <th scope="col">Actions</th>
@@ -26,7 +33,13 @@
       <tbody>
         <tr class="align-middle" *ngFor="let mentor of mentorList | search: searchText; let i = index">
           <td class="table-cell">{{ mentor.id }}</td>
-          <td class="table-cell">{{ mentor.name }}</td>
+          <td class="table-cell">{{ mentor.firstname }}</td>
+          <td class="table-cell">{{ mentor.lastname }}</td>
+          <td class="table-cell">{{ mentor.email }}</td>
+          <td class="table-cell">{{ mentor.contact }}</td>
+          <td class="table-cell">{{ mentor.department | department: departmentList }}</td>
+          <td class="table-cell">{{ mentor.office | office: officeList }}</td>
+          <td class="table-cell">{{ mentor.date | date: "MM/dd/yyyy" }}</td>
           <td class="table-cell">{{ mentor.age }}</td>
           <td class="table-cell">{{ mentor.gender }}</td>
           <td class="d-flex justify-center">

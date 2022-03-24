@@ -5,6 +5,7 @@
 
 .table {
   height: 500px;
+  
 }
 
 table,
@@ -24,11 +25,15 @@ th,
 td {
   text-align: center;
   padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 th {
   font-weight: 400;
   color: #898989;
+  
 }
 
 h1 {
@@ -60,6 +65,7 @@ header {
 .search-icon {
   top: 13px;
   left: 15px;
+  cursor: pointer;
 }
 
 .icon {
@@ -92,6 +98,20 @@ header {
   border: none;
   height: 40px;
   width: 150px;
+  cursor: pointer;
+}
+
+.filter-btn {
+  background-color: #26ad5f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 150px;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
 }
 
 .edit-btn {
@@ -101,6 +121,7 @@ header {
   padding: 5px;
   border-radius: 5px;
   margin-right: 10px;
+  cursor: pointer;
 }
 
 .delete-btn {
@@ -109,9 +130,9 @@ header {
   border: none;
   padding: 5px;
   border-radius: 5px;
+  cursor: pointer;
 }
 
 .table-cell {
   text-align: left;
 }
-

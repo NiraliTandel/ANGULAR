@@ -11,7 +11,7 @@ export class SearchPipe implements PipeTransform {
       return mentors;
     }
     return mentors.filter((data: Mentor) => {
-      return data.name.toLowerCase().match(searchText.toLowerCase())
+      return data.firstname.toLowerCase().match(searchText.toLowerCase())
     });
   }
 }

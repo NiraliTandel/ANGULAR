@@ -5,11 +5,6 @@
   padding: 20px;
 }
 
-.form-wrapper {
-  height: 100%;
-  overflow: hidden;
-}
-
 .model-body {
   padding: 2rem;
   margin: 0 auto;
@@ -18,21 +13,12 @@
   background-color: white;
 }
 
-.padding-right {
-  padding-right: 10px;
-}
-
 label {
   font-weight: bold;
 }
 
-.test {
-  color: red;
-  font-size: 12px;
-}
-
 .text-box {
-  width: 100%;
+  width: 50%;
   border-radius: 10px;
   border: 2px solid #f8f8fa;
   padding: 5px;
@@ -42,7 +28,11 @@ label {
   margin-bottom: 20px;
 }
 
-.submit-btn {
+.padding-right {
+  padding-right: 10px;
+}
+
+.filter-btn {
   background-color: #26ad5f;
   color: white;
   border: none;
@@ -52,7 +42,7 @@ label {
   cursor: pointer;
 }
 
-.reset-btn {
+.clear-btn {
   background-color: #2f55e4;
   color: white;
   border: none;

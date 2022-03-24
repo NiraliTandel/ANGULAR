@@ -11,6 +11,10 @@ import { MentorService } from './mentor.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchPipe } from './pipes/search.pipe';
+import { DepartmentPipe } from './pipes/department.pipe';
+import { OfficePipe } from './pipes/office.pipe';
+import { FilterFormPresentationComponent } from './mentor-list-container/filter-form-presentation/filter-form-presentation.component';
+import { OverlayModule } from '@angular/cdk/overlay';
 
 
 @NgModule({
@@ -20,14 +24,18 @@ import { SearchPipe } from './pipes/search.pipe';
     MentorListContainerComponent,
     MentorFormPresentationComponent,
     MentorListPresentationComponent,
-    SearchPipe
+    SearchPipe,
+    DepartmentPipe,
+    OfficePipe,
+    FilterFormPresentationComponent
   ],
   imports: [
     CommonModule,
     MentorRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    OverlayModule
   ],
   providers: [
     MentorService
