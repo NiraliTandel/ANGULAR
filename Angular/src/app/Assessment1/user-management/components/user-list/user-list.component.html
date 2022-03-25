@@ -1,0 +1,36 @@
+<div class="container" *ngIf="userData?.length">
+  <!-- Start: Table -->
+  <table>
+    <thead>
+      <tr>
+        <th scope="col">NO</th>
+        <th scope="col">FIRST NAME</th>
+        <th scope="col">LAST NAME</th>
+        <th scope="col">CLIENT NAME</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">OFFICE</th>
+        <th scope="col">CONTACT NUMBER</th>
+        <th scope="col">ACTION</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let user of userData | search: searchText; let i = index">
+        <th scope="row">{{ i + 1 }}.</th>
+        <td>{{ user.firstname }}</td>
+        <td>{{ user.lastname }}</td>
+        <td>{{ user.client | client: client }}</td>
+        <td>{{ user.email }}</td>
+        <td>{{ user.office | office: office }}</td>
+        <td>{{ user.contact }}</td>
+        <td>
+          <button class="edit-btn" (click)="editUser(user.id)">EDIT</button>
+          <button class="delete-btn" (click)="deleteUser(user.id)">
+            DELETE
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- End: Table -->
+</div>
+<div *ngIf="!userData?.length">No data found...</div>

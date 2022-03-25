@@ -1,0 +1,165 @@
+table,
+tr {
+  border-collapse: collapse;
+  border: 2px solid #f8f8fa;
+  border-radius: 10px;
+  padding: 5px;
+  margin: 0 auto;
+  width: 97%;
+  overflow: hidden;
+  background-color: white;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 10px;
+}
+
+th {
+  font-weight: 400;
+  color: #898989;
+}
+
+h1 {
+  padding: 20px 25px 20px 25px;
+}
+
+header {
+  display: flex;
+  justify-content: justify-content-between;
+  align-items: center;
+  height: 70px;
+  padding-left: 25px;
+  padding-right: 40px;
+  margin: 0 0 25px;
+}
+
+.table {
+  height: 100%;
+  overflow: scroll;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.padding-right {
+  padding-right: 10px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.search-icon {
+  top: 13px;
+  left: 15px;
+  cursor: pointer;
+}
+
+.icon {
+  height: 24px;
+  color: #898989;
+}
+
+.search {
+  height: 40px;
+  width: 20%;
+  background-color: white;
+  padding: 20px;
+  padding-left: 35px;
+  border: 2px solid #f8f8fa;
+  border-radius: 10px;
+  outline: none;
+  transition: all ease-in-out 0.25s;
+}
+
+.search:focus {
+  width: 40%;
+}
+
+.add-btn {
+  background-color: #2f55e4;
+  color: white;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #26ad5f;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #e95654;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.profile-img {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.table-cell {
+  text-align: left;
+}
+
+.list-wrapper {
+  height: 90%;
+}
+
+@media (max-width: 768px) {
+  .list-wrapper {
+    height: 90%;
+    width: 97%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+
+  h1 {
+    padding-left: 10px;
+  }
+
+  header {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .search {
+    width: 15%;
+  }
+
+  .search:focus {
+    width: 30%;
+  }
+
+  .add-btn {
+    width: 100px;
+  }
+
+  .profile-img {
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+  }
+}

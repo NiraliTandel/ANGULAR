@@ -1,0 +1,117 @@
+<div class="model-wrapper">
+  <div class="model-head">
+    <h2>{{ modalTitle }}</h2>
+  </div>
+  <div class="model-body">
+    <form [formGroup]="myForm">
+      <div class="margin-bottom-20">
+        <label for="firstname">First Name:</label><br />
+        <input type="text" id="firstname" name="firstname" formControlName="firstname" placeholder="Enter First Name"
+          class="text-box" />
+        <div class="test" *ngIf="getvalue['firstname'].touched && getvalue['firstname'].invalid">
+          <div *ngIf="
+                    getvalue['firstname'].errors &&
+                    getvalue['firstname'].errors['required']
+                  ">
+            *First Name is required
+          </div>
+          <div *ngIf="
+                    getvalue['firstname'].errors &&
+                    getvalue['firstname'].errors['minlength']
+                  ">
+            Minimum length should be 4
+          </div>
+          <div *ngIf="
+                    getvalue['firstname'].errors &&
+                    getvalue['firstname'].errors['maxlength']
+                  ">
+            Maximum length should be 7
+          </div>
+        </div>
+      </div>
+      <div class="margin-bottom-20">
+        <label for="lastname">Last Name:</label><br />
+        <input type="text" id="lastname" name="lastname" formControlName="lastname" placeholder="Enter Last Name"
+          class="text-box" />
+        <div class="test" *ngIf="getvalue['lastname'].touched && getvalue['lastname'].invalid">
+          <div *ngIf="
+                    getvalue['lastname'].errors &&
+                    getvalue['lastname'].errors['required']
+                  ">
+            *Last Name is required
+          </div>
+        </div>
+      </div>
+      <div class="margin-bottom-20">
+        <label for="email">Email Address:</label><br />
+        <input type="text" id="email" name="email" formControlName="email" placeholder="abc@gmail.com"
+          class="text-box" />
+        <div class="test" *ngIf="getvalue['email'].touched && getvalue['email'].invalid">
+          <div *ngIf="
+                    getvalue['email'].errors && getvalue['email'].errors['required']
+                  ">
+            *Email Address is required
+          </div>
+          <div *ngIf="
+                    getvalue['email'].errors && getvalue['email'].errors['email']
+                  ">
+            Please enter valid email
+          </div>
+        </div>
+      </div>
+      <div class="margin-bottom-20">
+        <label for="phone">Phone No:</label><br />
+        <input type="text" id="phone" name="phone" formControlName="phone" maxlength="10" placeholder="+91 8511007563"
+          class="text-box" />
+        <div class="test" *ngIf="getvalue['phone'].touched && getvalue['phone'].invalid">
+          <div *ngIf="
+                    getvalue['phone'].errors && getvalue['phone'].errors['required']
+                  ">
+            *Phone number is required
+          </div>
+          <div *ngIf="
+                    getvalue['phone'].errors && getvalue['phone'].errors['maxlength']
+                  ">
+            Maximum length should be 10
+          </div>
+        </div>
+      </div>
+      <div class="margin-bottom-20">
+        <label for="date">Date of Employeement:</label><br />
+        <input type="date" id="date" name="date" formControlName="date" class="text-box" /><br />
+      </div>
+      <div class="margin-bottom-20">
+        <label>Gender: </label><br />
+        <input type="radio" name="gender" id="male" value="Male" formControlName="gender" />
+        <label for="male" class="padding-right">Male</label>
+        <input type="radio" name="gender" id="female" value="Female" formControlName="gender" />
+        <label for="female" class="padding-right">Female</label>
+        <input type="radio" name="gender" id="other" value="Other" formControlName="gender" />
+        <label for="other">Other</label>
+      </div>
+      <div class="margin-bottom-20">
+        <label for="department">Department:</label><br />
+        <select name="department" id="department" formControlName="department" class="text-box">
+          <option *ngFor="let department of department" [value]="department.id">
+            {{ department.name }}
+          </option>
+        </select>
+      </div>
+      <div class="d-flex justify-content-between">
+        <div>
+          <button class="submit-btn" type="submit" [disabled]="myForm.invalid" (click)="onSubmit()">
+            Submit
+          </button>
+          <button class="reset-btn" type="button" (click)="resetForm()">
+            Reset
+          </button>
+        </div>
+        <div>
+          <button class="cancel-btn" type="button" (click)="onCancel()">
+            Cancel
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

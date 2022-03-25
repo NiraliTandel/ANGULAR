@@ -1,0 +1,27 @@
+<div class="wrapper">
+  <h1 class="title">ngTemplateOutlet Demo</h1>
+
+  <label for="mode">Display Mode:</label>
+  <select [(ngModel)]="mode" class="mode">
+    <option *ngFor="let item of modeOptions" [ngValue]="item.mode">{{item.mode}}</option>
+  </select>
+
+  <ng-template let-items #cardTemplate>
+    <div class="card" *ngFor="let item of items">
+      <h1 class="card-title">{{item.header}}</h1>
+      <p class="card-text">{{item.content}}</p>
+    </div>
+  </ng-template>
+
+  <ng-template let-items #listTemplate>
+    <ul class="list-view">
+      <li class="list-item" *ngFor="let item of items">
+        <strong>{{item.header}} </strong> ( {{item.content}} )
+      </li>
+    </ul>
+  </ng-template>
+
+  <ng-container [ngTemplateOutlet]="template" [ngTemplateOutletContext]="{$implicit:items}">
+  </ng-container>
+
+</div>

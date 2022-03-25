@@ -1,0 +1,4 @@
+<app-user-form (saveData)="saveData($event)" [clientData]="clientData" [officeData]="officeData" [edit]="editUser">
+</app-user-form>
+<app-user-list [userData]="userData" [client]="clientData" [office]="officeData" (editId)="updateUser($event)"
+  (deleteId)="deleteUser($event)"></app-user-list>

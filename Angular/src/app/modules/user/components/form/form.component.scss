@@ -1,0 +1,83 @@
+h1 {
+  padding: 20px 30px 20px 30px;
+}
+
+.form-wrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+.container {
+  width: 97%;
+  height: auto;
+  padding: 2rem;
+  margin: 0 auto;
+  border-radius: 10px;
+  border: 2px solid #f8f8fa;
+  background-color: white;
+  overflow: scroll;
+}
+
+.padding-right {
+  padding-right: 10px;
+}
+
+label {
+  font-weight: bold;
+}
+
+.test {
+  color: red;
+  font-size: 12px;
+}
+
+.text-box {
+  width: 25%;
+  border-radius: 10px;
+  border: 2px solid #f8f8fa;
+  padding: 5px;
+}
+
+.margin-bottom-20 {
+  margin-bottom: 20px;
+}
+
+.submit-btn {
+  background-color: #26ad5f;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.reset-btn {
+  background-color: #2f55e4;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #e95654;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-left: 100px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .container {
+    overflow: scroll;
+    height: 70%;
+  }
+
+  h1 {
+    padding-left: 10px;
+  }
+}

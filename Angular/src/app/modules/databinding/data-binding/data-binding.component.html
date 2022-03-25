@@ -1,0 +1,74 @@
+<h1 style="text-align: center; margin-top: 20px; margin-bottom: 20px">
+  {{ title }}
+</h1>
+
+<!--Start: Interpolation-->
+<h2
+  style="
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: plum;
+  "
+>
+  Interpolation
+</h2>
+<h2>Name: {{ name }}</h2>
+<!--End: Interpolation-->
+
+<!--Start: Property Binding-->
+<h2
+  style="
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: plum;
+  "
+>
+  Property Binding
+</h2>
+<img [src]="itemImageUrl" style="height: 150px; width: 150px" /><br />
+<!--End: Property Binding-->
+
+<!--Start: Event Binding-->
+<h2
+  style="
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: plum;
+  "
+>
+  Event Binding
+</h2>
+<button (click)="onClick()">Submit</button><br />
+<!--End: Event Binding-->
+
+<!--Start: Two way Binding (ngModel)-->
+<h2
+  style="
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: plum;
+  "
+>
+  Two Way Binding
+</h2>
+<input type="text" [(ngModel)]="data" /><br />
+<h2>{{ data }}</h2>
+<!--End: Two way Binding (ngModel)-->
+
+<!--Start: Component Communication-->
+<h2
+  style="
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: plum;
+  "
+>
+  Component Communication
+</h2>
+<app-parent></app-parent>
+<!--End: Component Communication-->

@@ -1,0 +1,138 @@
+.list-wrapper {
+  height: 90%;
+  padding: 40px;
+}
+
+.table {
+  height: 500px;
+  
+}
+
+table,
+tr {
+  border-collapse: collapse;
+  border: 2px solid #f8f8fa;
+  border-radius: 10px;
+  padding: 5px;
+  width: 100%;
+  overflow: hidden;
+  background-color: white;
+  margin-top: 40px;
+  table-layout: fixed;
+}
+
+th,
+td {
+  text-align: center;
+  padding: 10px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+th {
+  font-weight: 400;
+  color: #898989;
+  
+}
+
+h1 {
+  padding-bottom: 40px;
+}
+
+header {
+  display: flex;
+  justify-content: justify-content-between;
+  align-items: center;
+}
+
+.table {
+  height: 100%;
+}
+
+.padding-right {
+  padding-right: 10px;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.position-absolute {
+  position: absolute;
+}
+
+.search-icon {
+  top: 13px;
+  left: 15px;
+  cursor: pointer;
+}
+
+.icon {
+  height: 24px;
+  color: #898989;
+}
+
+.search {
+  height: 40px;
+  width: 25%;
+  background-color: white;
+  padding: 20px;
+  padding-left: 35px;
+  border: 2px solid #f8f8fa;
+  border-radius: 10px;
+  outline: none;
+  transition: all ease-in-out 0.25s;
+}
+
+.search:focus {
+  width: 40%;
+}
+
+.add-btn {
+  background-color: #2f55e4;
+  color: white;
+  font-size: 16px;
+  padding: 5px;
+  border-radius: 10px;
+  border: none;
+  height: 40px;
+  width: 150px;
+  cursor: pointer;
+}
+
+.filter-btn {
+  background-color: #26ad5f;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  height: 40px;
+  width: 150px;
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+.edit-btn {
+  background-color: #26ad5f;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background-color: #e95654;
+  color: white;
+  border: none;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.table-cell {
+  text-align: left;
+}

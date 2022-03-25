@@ -1,0 +1,29 @@
+/* You can add global styles to this file, and also import other style files */
+
+// Project base and component style import
+@import '../src/assets/scss/base/index';
+
+// Vendor base and component style import
+@import '../src/assets/scss/vendor/bootstrap-base';
+
+@import '../src/assets/scss/vendor/bootstrap-components';
+
+// Project Specific Components
+@import '../src/assets/scss/component/index';
+
+// Now other style import
+@import '../src/assets/scss/layout/index';
+
+@import '../src/assets/scss/utilities/index';
+
+
+// Overlay
+@import '@angular/cdk/overlay-prebuilt.css';
+
+
+// Media Query
+@media (max-width: 768px) {
+  .font-size {
+    font-size: 14px;
+  }
+}

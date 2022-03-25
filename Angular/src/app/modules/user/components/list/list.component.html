@@ -1,0 +1,64 @@
+<div class="list-wrapper d-flex flex-column">
+  <h1>User List</h1>
+  <header>
+    <div class="flex-grow-1 position-relative">
+      <span>
+        <input type="search" class="search" name="search" id="search" placeholder="Search User"
+          [(ngModel)]="searchText" />
+      </span>
+      <label for="search" class="search-icon icon-search_icon padding-right position-absolute"></label>
+    </div>
+    <div>
+      <button class="add-btn" id="btn" (click)="openFormModel()">+ Add User</button>
+    </div>
+  </header>
+  <div class="table" *ngIf="userData?.length">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col" class="table-cell font-size">#</th>
+          <th scope="col" class="table-cell font-size">Name</th>
+          <th scope="col" class="table-cell font-size">Email Address</th>
+          <th scope="col" class="table-cell font-size">Gender</th>
+          <th scope="col" class="table-cell font-size">Date Of Employeement</th>
+          <th scope="col" class="table-cell font-size">Department</th>
+          <th scope="col" class="table-cell font-size">Action</th>
+        </tr>
+      </thead>
+      <tbody class="font-size">
+        <tr *ngFor="let user of userData | userFilter: searchText; let i = index">
+          <th scope="row" class="table-cell">{{ i + 1 }}.</th>
+          <td class="table-cell">
+            <div class="d-flex align-items-center">
+              <figure class="profile-img d-flex align-items-center overflow-hidden">
+                <img src="./assets/images/{{ user.profileImg }}" alt="" />
+              </figure>
+              {{ user.firstname + " " + user.lastname }}
+            </div>
+          </td>
+          <td class="table-cell">
+            {{ user.email }}
+          </td>
+          <td class="table-cell">
+            {{ user.gender }}
+          </td>
+          <td class="table-cell">
+            {{ user.date | date: "MM/dd/yyyy" }}
+          </td>
+          <td class="table-cell">
+            {{ user.department | department: departmentData }}
+          </td>
+          <td class="table-cell">
+            <button class="edit-btn" (click)="editUser(user.id)">
+              Edit
+            </button>
+            <button class="delete-btn" (click)="deletePopUp(user.id)">
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div *ngIf="!userData?.length">No data found...</div>
+</div>

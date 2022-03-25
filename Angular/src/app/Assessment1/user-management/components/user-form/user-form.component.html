@@ -1,0 +1,96 @@
+<!-- Start: Header -->
+<header>
+  <h1>Users</h1>
+  <div class="position-relative">
+    <label>Client: </label>
+    <select class="client-sort" [(ngModel)]="sortclient">
+      <option *ngFor="let client of clientData" [value]="client.id">
+        {{ client.name }}
+      </option>
+    </select>
+    <span class="icon-search_icon position-absolute"></span>
+    <span><input type="search" class="search" name="search" id="search" placeholder="Search User" /></span>
+    <button type="button" class="add-btn" (click)="toggleForm()">
+      + NEW USER
+    </button>
+  </div>
+</header>
+<!-- End: Header -->
+<div *ngIf="showForm">
+  <!-- Start: Form -->
+  <form class="form" [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <fieldset class="container">
+      <!-- Start: First Name -->
+      <input type="text" id="firstname" name="firstname" formControlName="firstname" placeholder="FIRST NAME"
+        class="text-box margin-top-20 margin-left-15" />
+      <div class="test" *ngIf="getvalue['firstname'].touched && getvalue['firstname'].invalid">
+        <div *ngIf="
+          getvalue['firstname'].errors &&
+          getvalue['firstname'].errors['required']
+        ">
+          *First Name is required
+        </div>
+      </div>
+      <!-- End: First Name -->
+      <!-- Start: Last Name -->
+      <input type="text" id="lastname" name="lastname" formControlName="lastname" placeholder="LAST NAME"
+        class="text-box" />
+      <div class="test" *ngIf="getvalue['lastname'].touched && getvalue['lastname'].invalid">
+        <div *ngIf="
+          getvalue['lastname'].errors && getvalue['lastname'].errors['required']
+        ">
+          *Last Name is required
+        </div>
+      </div>
+      <!-- End: Last Name -->
+      <!-- Start: Email -->
+      <input type="text" id="email" name="email" formControlName="email" placeholder="EMAIL" class="text-box" />
+      <div class="test" *ngIf="getvalue['email'].touched && getvalue['email'].invalid">
+        <div *ngIf="getvalue['email'].errors && getvalue['email'].errors['required']">
+          *Email Address is required
+        </div>
+        <div *ngIf="getvalue['email'].errors && getvalue['email'].errors['email']">
+          Please enter valid email
+        </div>
+      </div>
+      <!-- End: Email -->
+      <!-- Start: Contact -->
+      <input type="text" id="contact" name="contact" formControlName="contact" maxlength="10"
+        placeholder="PRIMARY CONTACT NUMBER" class="text-box" />
+      <div class="test" *ngIf="getvalue['contact'].touched && getvalue['contact'].invalid">
+        <div *ngIf="
+          getvalue['contact'].errors && getvalue['contact'].errors['required']
+        ">
+          *Contact number is required
+        </div>
+        <div *ngIf="
+          getvalue['phone'].errors && getvalue['phone'].errors['maxlength']
+        ">
+          Maximum length should be 10
+        </div>
+      </div>
+      <!-- End: Contact -->
+      <!-- Start: Client Name -->
+      <select name="client" id="client" formControlName="client" class="client">
+        <option *ngFor="let client of clientData" [value]="client.id">
+          {{ client.name }}
+        </option>
+      </select>
+      <!-- End: Client Name -->
+      <!-- Start: Office -->
+      <select name="office" id="office" formControlName="office" class="text-box">
+        <option *ngFor="let office of officeData" [value]="office.id">
+          {{ office.name }}
+        </option>
+      </select>
+      <!-- End: Office -->
+      <!-- Start: Button -->
+      <div class="d-flex justify-content-end margin-top-40 margin-bottom-20">
+        <button class="cancel-btn" (click)="toggleForm()">CANCEL</button>
+        <button class="save-btn" type="submit" (click)="onSubmit()">SAVE</button>
+      </div>
+      <!-- End: Button -->
+    </fieldset>
+  </form>
+  <!-- End: Form -->
+</div>

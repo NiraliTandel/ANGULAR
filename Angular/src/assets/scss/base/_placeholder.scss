@@ -1,0 +1,16 @@
+// All the SCSS placeholders goes here
+::-webkit-input-placeholder {
+    font-size: 12px;
+ }
+ 
+ :-moz-placeholder { /* Firefox 18- */
+       font-size: 12px;
+ }
+ 
+ ::-moz-placeholder {  /* Firefox 19+ */
+       font-size: 12px;
+ }
+ 
+ :-ms-input-placeholder {
+       font-size: 12px;
+ }
