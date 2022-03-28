@@ -9,8 +9,8 @@
       <label for="search" class="search-icon icon-search_icon padding-right position-absolute"></label>
     </div>
     <div class="d-flex justify-content-between">
-      <button class="add-btn" routerLink="../add">+ Add</button>
       <button class="filter-btn" (click)="openFilterModel()">Filter</button>
+      <button class="add-btn" routerLink="../add">+ Add</button>
     </div>
   </header>
   <div class="table" *ngIf="mentorList?.length">

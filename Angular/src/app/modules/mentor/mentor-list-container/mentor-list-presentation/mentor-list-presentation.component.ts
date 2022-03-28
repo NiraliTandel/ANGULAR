@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, ChangeDetectorRef, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Router } from '@angular/router';
-import { Department, FilterData, Mentor, Office } from '../../mentor.model';
+import { Department, Mentor, Office } from '../../mentor.model';
 import { MentorListPresenterService } from '../mentor-list-presenter/mentor-list-presenter.service';
 
 @Component({
@@ -14,7 +14,6 @@ export class MentorListPresentationComponent implements OnInit {
 
   @Input() public set mentorList(value: Mentor[] | null) {
     if (value) {
-      console.log(this.filterData);
       this._mentorList = value;
     }
   }
@@ -45,7 +44,6 @@ export class MentorListPresentationComponent implements OnInit {
   private _mentorList!: Mentor[];
   private _departmentList!: Department[];
   private _officeList!: Office[];
-  public filterData: FilterData;
   searchText: string = "";
 
   constructor(
@@ -62,12 +60,8 @@ export class MentorListPresentationComponent implements OnInit {
       this.delete.emit(res);
     });
     this.mentorListPresenter.filterdata$.subscribe(res => {
-      const newMentorList = this._mentorList.filter(data => {
-        return data.gender == res.gender;
-      });
-      console.log(newMentorList);
-      this._mentorList = newMentorList;
-      this.cdr.detectChanges();
+      this._mentorList = res;
+      this.cdr.markForCheck();
     })
   }
 
@@ -80,7 +74,7 @@ export class MentorListPresentationComponent implements OnInit {
   }
 
   openFilterModel() {
-    this.mentorListPresenter.openFilterModel();
+    this.mentorListPresenter.openFilterModel(this._mentorList);
   }
 
 }

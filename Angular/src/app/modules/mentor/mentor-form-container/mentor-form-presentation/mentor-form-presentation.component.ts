@@ -27,22 +27,22 @@ export class MentorFormPresentationComponent implements OnInit {
     return this._mentorData;
   }
 
-  @Input() public set departmentList(value : Department[] | null) {
+  @Input() public set departmentList(value: Department[] | null) {
     if (value) {
       this._departmentList = value;
     }
   }
-  public get departmentList() : Department[] {
+  public get departmentList(): Department[] {
     return this._departmentList;
   }
 
 
-  @Input() public set officeList(value : Office[] | null) {
+  @Input() public set officeList(value: Office[] | null) {
     if (value) {
       this._officeList = value;
     }
   }
-  public get officeList() : Office[] {
+  public get officeList(): Office[] {
     return this._officeList;
   }
 

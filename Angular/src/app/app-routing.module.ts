@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { LoginComponent } from './core/login/login.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'reactiveform', pathMatch: 'full' },
+  { path: '', redirectTo: 'login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
   { path: 'angularbasics', loadChildren: () => import('./modules/angularbasics/angularbasics.module').then(m => m.AngularbasicsModule) },
   { path: 'databinding', loadChildren: () => import('./modules/databinding/databinding.module').then(m => m.DatabindingModule) },
   { path: 'directivesandpipes', loadChildren: () => import('./modules/directivesandpipes/directivesandpipes.module').then(m => m.DirectivesandpipesModule) },

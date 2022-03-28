@@ -3,7 +3,16 @@
     <h2>Filter</h2>
   </div>
   <div class="model-body">
-    <form [formGroup]="filterForm">
+    <form [formGroup]="filterForm" (ngSubmit)="applyFilter()">
+      <div class="margin-bottom-20">
+        <label for="firstname">First Name:</label><br />
+        <input type="text" id="firstname" name="firstname" formControlName="firstname" placeholder="Enter First Name"
+          class="text-box" />
+      </div>
+      <div class="margin-bottom-20">
+        <label for="age">Age:</label><br />
+        <input type="text" id="age" name="age" formControlName="age" placeholder="Enter Age" class="text-box" />
+      </div>
       <div class="margin-bottom-20">
         <label>Filter by Gender:</label><br />
         <input type="radio" name="gender" id="male" value="Male" formControlName="gender" />
@@ -15,7 +24,7 @@
       </div>
       <div class="d-flex justify-content-between">
         <div>
-          <button class="filter-btn" type="submit" (click)="applyFilter()">
+          <button class="filter-btn" type="submit">
             Filter
           </button>
         </div>

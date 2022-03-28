@@ -8,9 +8,9 @@ describe('MentorFormPresentationComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ MentorFormPresentationComponent ]
+      declarations: [MentorFormPresentationComponent]
     })
-    .compileComponents();
+      .compileComponents();
   });
 
   beforeEach(() => {

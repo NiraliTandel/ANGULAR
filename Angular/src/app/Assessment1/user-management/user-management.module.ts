@@ -27,7 +27,7 @@ import { SearchPipe } from './pipes/search.pipe';
     UserManagementRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    // HttpClientModule
   ],
   providers: [
     UserService

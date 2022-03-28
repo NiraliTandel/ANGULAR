@@ -30,19 +30,19 @@ export class MentorFormContainerComponent implements OnInit {
     if (this.id) {
       this.mentorData$ = this.mentorService.getMentorById(this.id);
     }
-   }
+  }
 
   ngOnInit(): void {
     this.getDepartment();
     this.getOffice();
   }
 
-  getDepartment(){
-    this.departmentList$=this.mentorService.getDepartment();
+  getDepartment() {
+    this.departmentList$ = this.mentorService.getDepartment();
   }
 
-  getOffice(){
-    this.officeList$=this.mentorService.getOffice();
+  getOffice() {
+    this.officeList$ = this.mentorService.getOffice();
   }
 
   addUser(mentorForm: MentorForm) {
@@ -55,7 +55,7 @@ export class MentorFormContainerComponent implements OnInit {
   }
 
   editUser(mentorForm: MentorForm) {
-    this.mentorService.editMentor(mentorForm,this.id).subscribe(
+    this.mentorService.editMentor(mentorForm, this.id).subscribe(
       (res: any) => {
         alert('Data updated successfully')
         this.router.navigateByUrl('mentor/list');
