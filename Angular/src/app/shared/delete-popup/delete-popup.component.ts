@@ -10,9 +10,10 @@ export class DeletePopupComponent implements OnInit {
 
   constructor() {
     this.value = new EventEmitter<boolean>();
-   }
+  }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+  }
 
   close(value: boolean) {
     this.value.emit(value);

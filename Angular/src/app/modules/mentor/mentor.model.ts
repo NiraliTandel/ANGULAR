@@ -32,6 +32,9 @@ export class Mentor {
     this.age = age;
     this.gender = gender;
   }
+  public static comparator(property: keyof Mentor, isReverse: number): any {
+    return (a: Mentor, b: Mentor) => isReverse * (a[property] < b[property] ? -1 : (a[property] === b[property] ? 0 : 1));
+  }
 }
 
 export class MentorForm {

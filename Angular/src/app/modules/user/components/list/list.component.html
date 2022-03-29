@@ -12,7 +12,7 @@
       <button class="add-btn" id="btn" (click)="openFormModel()">+ Add User</button>
     </div>
   </header>
-  <div class="table" *ngIf="userData?.length">
+  <div class="table">
     <table>
       <thead>
         <tr>
@@ -25,7 +25,7 @@
           <th scope="col" class="table-cell font-size">Action</th>
         </tr>
       </thead>
-      <tbody class="font-size">
+      <tbody class="font-size" *ngIf="userData?.length">
         <tr *ngFor="let user of userData | userFilter: searchText; let i = index">
           <th scope="row" class="table-cell">{{ i + 1 }}.</th>
           <td class="table-cell">
@@ -58,7 +58,7 @@
           </td>
         </tr>
       </tbody>
+      <div *ngIf="!userData?.length">No data found...</div>
     </table>
   </div>
-  <div *ngIf="!userData?.length">No data found...</div>
 </div>

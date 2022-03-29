@@ -15,6 +15,7 @@ import { DepartmentPipe } from './pipes/department.pipe';
 import { OfficePipe } from './pipes/office.pipe';
 import { FilterFormPresentationComponent } from './mentor-list-container/filter-form-presentation/filter-form-presentation.component';
 import { OverlayModule } from '@angular/cdk/overlay';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { OverlayModule } from '@angular/cdk/overlay';
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
-    OverlayModule
+    OverlayModule,
+    SharedModule
   ],
   providers: [
     MentorService

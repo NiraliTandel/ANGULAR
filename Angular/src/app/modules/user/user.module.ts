@@ -26,7 +26,7 @@ import { FormModelComponent } from './components/form-model/form-model.component
     UserRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    // HttpClientModule,
+    HttpClientModule,
     OverlayModule
   ],
   providers:[

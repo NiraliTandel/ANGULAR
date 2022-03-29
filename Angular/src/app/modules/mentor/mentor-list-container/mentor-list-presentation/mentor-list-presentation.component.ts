@@ -14,6 +14,9 @@ export class MentorListPresentationComponent implements OnInit {
 
   @Input() public set mentorList(value: Mentor[] | null) {
     if (value) {
+      if (!this._newMentorList) {
+        this._newMentorList = value;
+      }
       this._mentorList = value;
     }
   }
@@ -41,6 +44,7 @@ export class MentorListPresentationComponent implements OnInit {
 
   @Output() public delete: EventEmitter<number>;
 
+  public _newMentorList: Mentor[];
   private _mentorList!: Mentor[];
   private _departmentList!: Department[];
   private _officeList!: Office[];
@@ -61,7 +65,7 @@ export class MentorListPresentationComponent implements OnInit {
     });
     this.mentorListPresenter.filterdata$.subscribe(res => {
       this._mentorList = res;
-      this.cdr.markForCheck();
+      this.cdr.detectChanges();
     })
   }
 
@@ -74,7 +78,29 @@ export class MentorListPresentationComponent implements OnInit {
   }
 
   openFilterModel() {
-    this.mentorListPresenter.openFilterModel(this._mentorList);
+    this.mentorListPresenter.openFilterModel(this._newMentorList);
   }
 
+  changePage(mentorList: Mentor[]) {
+    this._newMentorList = mentorList;
+    this.cdr.markForCheck();
+    console.log(this.mentorList);
+  }
+
+  sortedBy: string = 'id';
+  isDesc: boolean = false;
+
+  sort(colName: any) {
+    let sortBy = colName.target.getAttribute('data-value');
+
+    if (this.sortedBy === sortBy) {
+      this.isDesc = !this.isDesc
+    } else {
+      this.sortedBy = sortBy;
+      this.isDesc = true;
+    }
+    
+    console.log(this.sortedBy, this.isDesc)
+    this.mentorListPresenter.sortBy(sortBy, this._newMentorList, this.isDesc);
+  }
 }

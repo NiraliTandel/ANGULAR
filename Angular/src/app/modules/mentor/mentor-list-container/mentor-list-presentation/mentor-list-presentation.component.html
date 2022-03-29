@@ -13,25 +13,25 @@
       <button class="add-btn" routerLink="../add">+ Add</button>
     </div>
   </header>
-  <div class="table" *ngIf="mentorList?.length">
+  <div class="table">
     <table>
       <thead>
-        <tr>
-          <th scope="col" class="table-cell">Mentor Id</th>
-          <th scope="col" class="table-cell">First Name</th>
-          <th scope="col" class="table-cell">Last Name</th>
-          <th scope="col" class="table-cell">Email Address</th>
-          <th scope="col" class="table-cell">Contact Number</th>
-          <th scope="col" class="table-cell">Department</th>
-          <th scope="col" class="table-cell">Office</th>
-          <th scope="col" class="table-cell">Date Of Employeement</th>
-          <th scope="col" class="table-cell">Age</th>
-          <th scope="col" class="table-cell">Gender</th>
+        <tr (click)="sort($event)">
+          <th scope="col" class="table-cell" data-value="id">Mentor Id</th>
+          <th scope="col" class="table-cell" data-value="firstname">First Name</th>
+          <th scope="col" class="table-cell" data-value="lastname">Last Name</th>
+          <th scope="col" class="table-cell" data-value="email">Email Address</th>
+          <th scope="col" class="table-cell" data-value="contact">Contact Number</th>
+          <th scope="col" class="table-cell" data-value="department">Department</th>
+          <th scope="col" class="table-cell" data-value="office">Office</th>
+          <th scope="col" class="table-cell" data-value="date">Date Of Employeement</th>
+          <th scope="col" class="table-cell" data-value="age">Age</th>
+          <th scope="col" class="table-cell" data-value="gender">Gender</th>
           <th scope="col">Actions</th>
         </tr>
       </thead>
-      <tbody>
-        <tr class="align-middle" *ngFor="let mentor of mentorList | search: searchText; let i = index">
+      <tbody *ngIf="_newMentorList?.length">
+        <tr class="align-middle" *ngFor="let mentor of _newMentorList | search: searchText; let i = index">
           <td class="table-cell">{{ mentor.id }}</td>
           <td class="table-cell">{{ mentor.firstname }}</td>
           <td class="table-cell">{{ mentor.lastname }}</td>
@@ -52,7 +52,9 @@
           </td>
         </tr>
       </tbody>
+      <div *ngIf="!_newMentorList?.length">No data found...</div>
     </table>
+    <app-pagination [items]="mentorList" [itemsPerPage]="5" (changePage)="changePage($event)"
+      class="d-flex align-items-center justify-content-center"></app-pagination>
   </div>
-  <div *ngIf="!mentorList?.length">No data found...</div>
 </div>

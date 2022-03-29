@@ -63,4 +63,8 @@ export class MentorListPresenterService {
     });
   }
 
+  sortBy(sortBy: string, mentorData: Mentor[], isDesc: boolean) {
+    mentorData.sort(Mentor.comparator(sortBy as keyof Mentor, isDesc ? 1 : -1));
+  }
+
 }
