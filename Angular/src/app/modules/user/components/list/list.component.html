@@ -22,7 +22,7 @@
           <th scope="col" class="table-cell font-size">Gender</th>
           <th scope="col" class="table-cell font-size">Date Of Employeement</th>
           <th scope="col" class="table-cell font-size">Department</th>
-          <th scope="col" class="table-cell font-size">Action</th>
+          <th scope="col" class="table-cell font-size text-center">Action</th>
         </tr>
       </thead>
       <tbody class="font-size" *ngIf="userData?.length">
@@ -30,7 +30,7 @@
           <th scope="row" class="table-cell">{{ i + 1 }}.</th>
           <td class="table-cell">
             <div class="d-flex align-items-center">
-              <figure class="profile-img d-flex align-items-center overflow-hidden">
+              <figure class="profile-img d-flex align-items-center overflow-hidden mb-0">
                 <img src="./assets/images/{{ user.profileImg }}" alt="" />
               </figure>
               {{ user.firstname + " " + user.lastname }}
@@ -48,7 +48,7 @@
           <td class="table-cell">
             {{ user.department | department: departmentData }}
           </td>
-          <td class="table-cell">
+          <td class="table-cell text-center">
             <button class="edit-btn" (click)="editUser(user.id)">
               Edit
             </button>

@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'ngtemplateoutlet', loadChildren: () => import('./modules/ngtemplateoutlet/ngtemplateoutlet.module').then(m => m.NgtemplateoutletModule) },
   { path: 'todo', loadChildren: () => import('./modules/todo/todo.module').then(m => m.TodoModule) },
   { path: 'mentor', loadChildren: () => import('./modules/mentor/mentor.module').then(m => m.MentorModule) },
-  { path: 'user-subject', loadChildren: () => import('./modules/user-subject/user-subject.module').then(m => m.UserSubjectModule) }
+  { path: 'user-subject', loadChildren: () => import('./modules/user-subject/user-subject.module').then(m => m.UserSubjectModule) },
+  { path: 'file-upload', loadChildren: () => import('./modules/file-upload/file-upload.module').then(m => m.FileUploadModule) }
 ];
 
 @NgModule({

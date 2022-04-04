@@ -2,7 +2,7 @@ import { Overlay, OverlayConfig } from '@angular/cdk/overlay';
 import { ComponentPortal } from '@angular/cdk/portal';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { DeletePopupComponent } from 'src/app/shared/delete-popup/delete-popup.component';
+import { DeletePopupComponent } from 'src/app/shared/components/delete-popup/delete-popup.component';
 import { Department, User } from '../../models/user.model';
 import { FormService } from '../../services/form.service';
 import { FormModelComponent } from '../form-model/form-model.component';

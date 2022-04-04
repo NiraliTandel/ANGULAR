@@ -1,0 +1,2 @@
+<app-file-upload-presentation (fileUpload)="AddFile($event)"></app-file-upload-presentation>
+<app-file-list-presentation [fileList]="filesList$ | async" (delete)="DeleteFile($event)"></app-file-list-presentation>
