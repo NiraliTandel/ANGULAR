@@ -19,30 +19,41 @@ export class FileUploadComponent implements OnInit {
     this.filesList$ = this.fileService.getFile();
   }
 
-  AddFile(file: MyFile) {
+  AddFile(files: MyFile[]) {
     this.filesList$.subscribe({
       next: (list) => {
-        let isFile = list.find((res) => {
-          return res.name === file.name
-        })
-        if (isFile) {
-          alert("Duplicate File");
-        }
-        else {
-          this.UploadFile(file);
-        }
+        const uniqueFiles: MyFile[] = [];
+        let existingFiles = list.map((res) => res.name);
+        files.forEach(file => {
+          if (existingFiles.includes(file.name)) {
+            alert("Duplicate File");
+          }
+          else {
+            existingFiles.push(file.name);
+            uniqueFiles.push(file);
+          }
+        });
+        this.uploadFiles(uniqueFiles);
       }
     });
   }
 
-  UploadFile(file: MyFile) {
-    this.fileService.addFile(file).subscribe({
-      next: () => {
-        alert("File Added Successfully");
-        this.filesList$ = this.fileService.getFile();
-      },
-      error: (e) => { console.log(e) }
-    })
+  uploadFiles(files: MyFile[]) {
+    const validFiles: any = [];
+    const uploadFile = (i: number) => {
+      if (i >= files.length) {
+        return;
+      }
+      this.fileService.addFile(files[i]).subscribe({
+        next: () => {
+          alert("File Added Successfully");
+          this.filesList$ = this.fileService.getFile();
+          uploadFile(i + 1);
+        },
+        error: (e) => { console.log(e) }
+      });
+    }
+    uploadFile(0);
   }
 
   DeleteFile(id: number) {

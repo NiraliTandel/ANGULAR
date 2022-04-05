@@ -12,10 +12,10 @@ export class FileUploadPresentationComponent implements OnInit {
   public startDate: string;
   public endDate: string;
 
-  @Output() fileUpload: EventEmitter<MyFile>;
+  @Output() fileUpload: EventEmitter<MyFile[]>;
 
   constructor(private fileUploadPrensenter: FileUploadPresenterService) {
-    this.fileUpload = new EventEmitter<MyFile>();
+    this.fileUpload = new EventEmitter<MyFile[]>();
   }
 
   ngOnInit(): void {
@@ -32,9 +32,11 @@ export class FileUploadPresentationComponent implements OnInit {
     this.files = fileInput.files;
   }
 
+  filesToUpload: any;
+
   uploadFile() {
     if (this.files) {
-      this.fileUploadPrensenter.uploadFile(this.files)
+      this.filesToUpload = this.fileUploadPrensenter.uploadFile(this.files)
     } else {
       alert("No File is Selected")
     }

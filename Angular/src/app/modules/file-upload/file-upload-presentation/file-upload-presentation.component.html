@@ -1,6 +1,4 @@
-<div appFileDragAndDrop
-  class="container d-flex flex-column align-items-center justify-content-center bg-white m-4 p-4 rounded"
-  (readFile)="readFile($event)">
+<div class="container d-flex flex-column align-items-center justify-content-center bg-white m-4 p-4 rounded">
   <input type="file" name="file" id="file" class="form-control" multiple (change)="readFile($event.target)">
   <button type="button" class="btn btn-primary m-3 rounded" (click)="uploadFile()">Upload</button>
 </div>
