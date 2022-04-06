@@ -9,6 +9,7 @@ import { MyFile } from '../file-upload.model';
 })
 export class FileUploadPresentationComponent implements OnInit {
   public files: FileList;
+  public fileList: File[];
   public startDate: string;
   public endDate: string;
 
@@ -30,6 +31,7 @@ export class FileUploadPresentationComponent implements OnInit {
   readFile(fileInput: any) {
     console.log(fileInput.files)
     this.files = fileInput.files;
+    this.fileList = Object.keys(this.files).map((key: any) => this.files[key]);
   }
 
   filesToUpload: any;
