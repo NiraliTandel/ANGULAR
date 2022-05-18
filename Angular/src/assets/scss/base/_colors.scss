@@ -10,3 +10,39 @@
 
 // Dedicated for button text only
 
+// theme Color
+$primary: #145b69;
+$secondary: #afafaf;
+$info: #76969e;
+$dark: #011721;
+$muted: #7fb4be;
+$danger: #ff7171;
+$light: #FFFFFF;
+
+// registration pages background color
+$content-bg: #E4E4E4;
+
+//form-colors
+$border-color-role: #8CB3BC;
+
+//aside
+$aside-bg:#E7F2F5;
+
+//button shadow
+$btn-shadow-color: #145B6933;
+
+
+///// Bootstrap
+// input
+$input-bg: $light;
+$input-border-color: $secondary;
+$input-focus-border-color: $primary;
+$input-bg: $light;
+
+// Body 
+$body-bg: $content-bg;
+
+// ngx-bootstrap datepicker
+$theme-list: (
+  'primary': $primary,
+);

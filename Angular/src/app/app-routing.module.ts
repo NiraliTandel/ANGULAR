@@ -15,7 +15,8 @@ const routes: Routes = [
   { path: 'todo', loadChildren: () => import('./modules/todo/todo.module').then(m => m.TodoModule) },
   { path: 'mentor', loadChildren: () => import('./modules/mentor/mentor.module').then(m => m.MentorModule) },
   { path: 'user-subject', loadChildren: () => import('./modules/user-subject/user-subject.module').then(m => m.UserSubjectModule) },
-  { path: 'file-upload', loadChildren: () => import('./modules/file-upload/file-upload.module').then(m => m.FileUploadModule) }
+  { path: 'file-upload', loadChildren: () => import('./modules/file-upload/file-upload.module').then(m => m.FileUploadModule) },
+  { path: 'doctor-edit-profile', loadChildren: () => import('./modules/doctor-edit-profile/doctor-edit-profile.module').then(m => m.DoctorEditProfileModule) },
 ];
 
 @NgModule({
