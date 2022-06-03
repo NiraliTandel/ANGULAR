@@ -1,20 +1,4 @@
 {
-  "profile": [
-    {
-      "id": 1,
-      "photo": "nullImg",
-      "specialization": "especial",
-      "gender": "Male",
-      "firstName": "GTA San Andreas",
-      "lastName": "Rockstar",
-      "emailId": "example.email@exam.ple",
-      "dateOfEstablishment": "22-2-2222",
-      "mobileNo": "9846758576",
-      "instituteName": "SoMe great Institute",
-      "instituteCertificate": "null0",
-      "doctorDegree": "null1"
-    }
-  ],
   "department": [
     {
       "id": 1,
